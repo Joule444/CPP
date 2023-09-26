@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:36:14 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/26 17:12:04 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:48:15 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,7 @@
 
 int	main()
 {
-	Contact	lol;
+	PhoneBook	MyPhoneBook;
+
+	MyPhoneBook.AddContact();
 }
