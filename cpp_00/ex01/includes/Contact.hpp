@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 16:36:14 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/26 17:12:04 by jthuysba         ###   ########.fr       */
+/*   Created: 2023/09/26 15:38:56 by jthuysba          #+#    #+#             */
+/*   Updated: 2023/09/26 18:02:55 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "includes/PhoneBook.hpp"
-#include "includes/Contact.hpp"
-
-int	main()
+#ifndef CONTACT_HPP
+	#define CONTACT_HPP
+	
+class Contact
 {
-	Contact	lol;
-}
+	public:
+		Contact(/* args */);
+		~Contact();
+	private:
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickName;
+		std::string _phoneNum;
+		std::string _secret;
+};
+
+#endif

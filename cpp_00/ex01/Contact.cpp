@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 16:38:13 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/18 18:12:20 by jthuysba         ###   ########.fr       */
+/*   Created: 2023/09/26 15:41:35 by jthuysba          #+#    #+#             */
+/*   Updated: 2023/09/26 17:11:11 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-	#define PHONEBOOK_HPP
+#include <iostream>
+#include "includes/Contact.hpp"
 
-class	PhoneBook
+Contact::Contact(/* args */)
 {
-	public:
-		PhoneBook();
-		~PhoneBook();
-};
+	std::cout << "Contact cree !\n";
+}
 
-#endif
+Contact::~Contact()
+{
+	std::cout << "Contact detruit !\n";
+}

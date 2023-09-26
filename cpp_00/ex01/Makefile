@@ -6,7 +6,7 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/09/18 16:45:45 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/09/26 17:11:56 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = phonebook
 
 SRCS_DIR	= ./
-SRCS 		= 	main.cpp phonebook.cpp
+SRCS 		= 	main.cpp PhoneBook.cpp Contact.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
