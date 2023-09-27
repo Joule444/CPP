@@ -26,7 +26,7 @@ class	PhoneBook
 		int		_nbContact;
 		Contact	_contactList[8];
 
-		std::string	_addInfo(std::string text);
+		std::string	_getInfo(std::string text);
 };
 
 #endif
