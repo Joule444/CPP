@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:38:13 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/26 22:14:27 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:22:50 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class	PhoneBook
 {
 	public:
 		PhoneBook();
-		~PhoneBook();
 		
 		void	AddContact();
 	private :

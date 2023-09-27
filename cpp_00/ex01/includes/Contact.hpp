@@ -6,13 +6,18 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:38:56 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/26 22:45:06 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:21:53 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 	#define CONTACT_HPP
-	
+
+#include <string.h>
+#include <stdlib.h>
+#include <iostream>
+#include "color.h"
+
 class Contact
 {
 	public:

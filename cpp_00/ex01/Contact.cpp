@@ -6,11 +6,10 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:41:35 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/26 22:47:12 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/27 21:22:53 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "includes/Contact.hpp"
 
 void	Contact::DisplayContact()

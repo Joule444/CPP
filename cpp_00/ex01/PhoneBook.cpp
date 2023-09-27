@@ -6,10 +6,11 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:27:43 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/26 22:48:46 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:43:47 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <iostream>
 #include "./includes/PhoneBook.hpp"
 #include "./includes/color.h"
@@ -23,9 +24,9 @@ std::string	PhoneBook::_getInfo(std::string text)
 		std::cout << text;
 		std::getline(std::cin, info);
 		if (std::cin.eof())
-			return ("");//WIP
+			exit(1);//WIP
 		if (info.length() == 0)
-			std::cout << RED << "Error : empty entry, please retry" << WHITE << std::endl;
+			std::cout << NEG_RED << "[Error]" << RED << " Empty info, please retry !" << WHITE << std::endl;
 		else
 			break ;
 	}
@@ -41,19 +42,12 @@ void	PhoneBook::AddContact()
 	data.set_nick_name(this->_getInfo("Nick Name : "));
 	data.set_phone_num(this->_getInfo("Phone Number : "));
 	data.set_secret(this->_getInfo("Darkest Secret : "));
+	std::cout << "\nContact added to the PhoneBook !\n" << std::endl; 
 	this->_contactList[this->_nbContact] = data;
-	this->_contactList[this->_nbContact].DisplayContact();
 }
 
 //Constructeur
 PhoneBook::PhoneBook()
 {
 	this->_nbContact = 0;
-	std::cout << "PhoneBook cree !\n";
-}
-
-//Destructeur
-PhoneBook::~PhoneBook()
-{
-	std::cout << "PhoneBook detruit !\n";
 }
