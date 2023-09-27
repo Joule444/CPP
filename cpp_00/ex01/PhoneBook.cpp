@@ -13,6 +13,26 @@
 #include <iostream>
 #include "./includes/PhoneBook.hpp"
 
+std::string	PhoneBook::_addInfo(std::string text)
+{
+	std::string	info;
+
+	while (true)
+	{
+		std::cout << text;
+		std::getline(std::cin, info);
+		/*
+		if (std::cin.eof())
+			std::exit(1);
+		*/
+		if (info.length() == 0)
+			std::cout << "Error : empty entry, please retry" << std::endl;
+		else
+			break ;
+	}
+	return (info);
+}
+
 void	PhoneBook::AddContact()
 {
 	std::string	firstName;
@@ -22,21 +42,11 @@ void	PhoneBook::AddContact()
 	std::string	secret;
 	Contact	data;
 
-	std::cout << "First Name : ";
-	std::cin >> firstName;
-	data.set_first_name(firstName);
-	std::cout << "Last Name : ";
-	std::cin >> lastName;
-	data.set_last_name(lastName);
-	std::cout << "Nick Name : ";
-	std::cin >> nickName;
-	data.set_nick_name(nickName);
-	std::cout << "Phone Number : ";
-	std::cin >> phoneNum;
-	data.set_phone_num(phoneNum);
-	std::cout << "Darkest Secret : ";
-	std::cin >> secret;
-	data.set_secret(secret);
+	data.set_first_name(this->_addInfo("First Name : "));
+	data.set_last_name(this->_addInfo("Last Name : "));
+	data.set_nick_name(this->_addInfo("Nick Name : "));
+	data.set_phone_num(this->_addInfo("Phone Number : "));
+	data.set_secret(this->_addInfo("Darkest Secret : "));
 	this->_contactList[this->_nbContact] = data;
 	this->_contactList[this->_nbContact].DisplayContact();
 }
