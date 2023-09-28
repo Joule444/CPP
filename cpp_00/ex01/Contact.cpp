@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:41:35 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 14:37:29 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:38:39 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ void	Contact::ShowContact()
 
 void	Contact::DisplayContact(int index)
 {
-	std::cout << CYAN << "|" << WHITE;
+	if (this->_firstName == "")
+		return ;
+	std::cout << CYAN << "\t|" << WHITE;
 	for (int i = 0; i < 9; i++)
 		std::cout << " ";
 	std::cout << index << CYAN << "|" << WHITE;

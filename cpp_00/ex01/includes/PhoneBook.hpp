@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:38:13 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 13:48:11 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:16:48 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	PhoneBook
 		void	Search();
 	private :
 		int		_nbContact;
+		int		_oldContact;
 		Contact	_contactList[8];
 
 		std::string	_getInfo(std::string text);
