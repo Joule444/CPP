@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:27:43 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 17:41:31 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 18:02:00 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,17 @@ void	PhoneBook::Search()
 		std::cout << "\t--PhoneBook is empty !--\n" << std::endl;
 		return ;
 	}
-	for (int i = 1; i <= 8; i++)
+	std::cout << "\t";
+	for (int i = 0; i < 4; i++)
+		std::cout << CYAN << "+----------";
+	std::cout << "+" << std::endl;
+	for (int i = 1; i <= this->_nbContact; i++)
 	{
 		this->_contactList[i - 1].DisplayContact(i);
+		std::cout << "\t";
+		for (int i = 0; i < 4; i++)
+			std::cout << CYAN << "+----------";
+		std::cout << "+" << std::endl;
 	}
 	std::cout << std::endl;
 	while (true)
@@ -73,14 +81,14 @@ void	PhoneBook::AddContact()
 
 	if (this->_nbContact == 8)
 	{
-		std::cout << "\n\t\t--PhoneBook is full !--\n\t--This contact will replace the oldest !\n\n";
+		std::cout << "\n\t\t--PhoneBook is full !--\n\t--This contact will replace the oldest !\n";
 	}
 	std::cout << std::endl;
-	data.set_first_name(this->_getInfo("First Name : "));
-	data.set_last_name(this->_getInfo("Last Name : "));
-	data.set_nick_name(this->_getInfo("Nick Name : "));
-	data.set_phone_num(this->_getInfo("Phone Number : "));
-	data.set_secret(this->_getInfo("Darkest Secret : "));
+	data.set_first_name(this->_getInfo("*First Name : "));
+	data.set_last_name(this->_getInfo("*Last Name : "));
+	data.set_nick_name(this->_getInfo("*Nick Name : "));
+	data.set_phone_num(this->_getInfo("*Phone Number : "));
+	data.set_secret(this->_getInfo("*Darkest Secret : "));
 	std::cout << "\n\t--Contact added to the PhoneBook !--\n" << std::endl;
 	if (this->_nbContact == 8)
 	{

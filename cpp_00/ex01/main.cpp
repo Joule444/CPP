@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:36:14 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 13:47:56 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 18:02:52 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ int	main(int argc, char **argv)
 	std::string	prompt;
 	
 	if (argc != 1)
+	{
+		std::cout << "Too many arguments !\n";
 		return (1);
+	}
+	std::cout << WHITE << "\n\t--Welcome to the PhoneBook !--\n\n";
 	while (true)
 	{
 		std::cout << WHITE << "PhoneBook" << CYAN << "> " << WHITE;
@@ -34,7 +38,7 @@ int	main(int argc, char **argv)
 			MyPhoneBook.Search();
 		else if (prompt == "EXIT")
 		{
-			std::cout << "Closing PhoneBook..." << std::endl;
+			std::cout << "\n\t--Closing PhoneBook... Bye bye !--\n" << std::endl;
 			return (1);
 		}
 		else
