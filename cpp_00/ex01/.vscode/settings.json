@@ -36,6 +36,16 @@
 		"utility": "cpp",
 		"initializer_list": "cpp",
 		"limits": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"array": "cpp",
+		"bit": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp",
+		"iterator": "cpp",
+		"numeric": "cpp",
+		"optional": "cpp",
+		"ranges": "cpp",
+		"span": "cpp",
+		"deque": "cpp"
 	}
 }

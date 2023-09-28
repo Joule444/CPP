@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:41:35 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 13:58:13 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:37:29 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,17 @@ void	Contact::_displayInfo(std::string info)
 	for (int i = 0; i < (10 - (int)info.length()); i++)
 		std::cout << " ";
 	std::cout << info << CYAN << "|" << WHITE;
+}
+
+void	Contact::ShowContact()
+{
+	std::cout << std::endl;
+	std::cout << "First name : " << this->_firstName << std::endl;
+	std::cout << "Last name : " << this->_lastName << std::endl;
+	std::cout << "Nick name : " << this->_nickName << std::endl;
+	std::cout << "Phone number : " << this->_phoneNum << std::endl;
+	std::cout << "Darkest secret : " << this->_secret << std::endl;
+	std::cout << std::endl;
 }
 
 void	Contact::DisplayContact(int index)
