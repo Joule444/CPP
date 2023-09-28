@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:38:56 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/27 22:21:53 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:54:24 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ class Contact
 		void	set_nick_name(std::string nick_name);
 		void	set_phone_num(std::string phone_num);
 		void	set_secret(std::string secret);
-		void	DisplayContact();
+		void	DisplayContact(int index);
 	private:
 		std::string	_firstName;
 		std::string	_lastName;
 		std::string	_nickName;
 		std::string _phoneNum;
 		std::string _secret;
+
+		void	_displayInfo(std::string info);
 };
 
 #endif

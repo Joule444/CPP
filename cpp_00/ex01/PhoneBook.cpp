@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:27:43 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/27 22:43:47 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:01:52 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ std::string	PhoneBook::_getInfo(std::string text)
 	return (info);
 }
 
+void	PhoneBook::Search()
+{
+	for (int i = 1; i <= 8; i++)
+	{
+		this->_contactList[i - 1].DisplayContact(i);
+	}
+}
+
 void	PhoneBook::AddContact()
 {
 	Contact	data;
@@ -44,6 +52,7 @@ void	PhoneBook::AddContact()
 	data.set_secret(this->_getInfo("Darkest Secret : "));
 	std::cout << "\nContact added to the PhoneBook !\n" << std::endl; 
 	this->_contactList[this->_nbContact] = data;
+	this->_nbContact++;
 }
 
 //Constructeur

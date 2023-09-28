@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:36:14 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/27 22:46:36 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:47:56 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 		return (1);
 	while (true)
 	{
-		std::cout << "PhoneBook" << CYAN << "> " << WHITE;
+		std::cout << WHITE << "PhoneBook" << CYAN << "> " << WHITE;
 		std::getline(std::cin, prompt);
 		if (std::cin.eof())
 			return (1);
@@ -30,11 +30,11 @@ int	main(int argc, char **argv)
 			std::cout << NEG_RED << "[Error]" << RED << " Empty entry, please retry !" << WHITE << std::endl;
 		else if (prompt == "ADD")
 			MyPhoneBook.AddContact();
-		// else if (prompt == "SEARCH")
-		// 	MyPhoneBook.Search
+		else if (prompt == "SEARCH")
+			MyPhoneBook.Search();
 		else if (prompt == "EXIT")
 		{
-			std::cout << "Fermeture du PhoneBook..." << std::endl;
+			std::cout << "Closing PhoneBook..." << std::endl;
 			return (1);
 		}
 		else

@@ -6,19 +6,38 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:41:35 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/27 21:22:53 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:58:13 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Contact.hpp"
 
-void	Contact::DisplayContact()
+void	Contact::_displayInfo(std::string info)
 {
-	std::cout << this->_firstName << std::endl;
-	std::cout << this->_lastName << std::endl;
-	std::cout << this->_nickName << std::endl;
-	std::cout << this->_phoneNum << std::endl;
-	std::cout << this->_secret << std::endl;
+	if (info.length() > 10)
+	{
+		for (int i = 0; i < 9; i++)
+		{
+			std::cout << info[i];
+		}
+		std::cout << "." << CYAN << "|" << WHITE;
+		return ;
+	}
+	for (int i = 0; i < (10 - (int)info.length()); i++)
+		std::cout << " ";
+	std::cout << info << CYAN << "|" << WHITE;
+}
+
+void	Contact::DisplayContact(int index)
+{
+	std::cout << CYAN << "|" << WHITE;
+	for (int i = 0; i < 9; i++)
+		std::cout << " ";
+	std::cout << index << CYAN << "|" << WHITE;
+	this->_displayInfo(this->_firstName);
+	this->_displayInfo(this->_lastName);
+	this->_displayInfo(this->_nickName);
+	std::cout << std::endl;
 }
 
 void	Contact::set_first_name(std::string first_name)
