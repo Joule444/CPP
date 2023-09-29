@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:55:29 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/29 12:45:49 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/29 14:47:12 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int	main()
 	bar->announce();
 	randomChump("Fubar");
 	delete bar;
+	return (0);
 }
