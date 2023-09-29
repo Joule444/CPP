@@ -5,27 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 14:46:26 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/29 14:59:10 by jthuysba         ###   ########.fr       */
+/*   Created: 2023/09/29 15:12:50 by jthuysba          #+#    #+#             */
+/*   Updated: 2023/09/29 15:20:10 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "includes/Weapon.hpp"
+#include "includes/HumanA.hpp"
+#include "includes/HumanB.hpp"
 
 int	main()
 {
-	std::string	str = "HI THIS IS BRAIN";
-	std::string	*stringPTR = &str;
-	std::string	&stringREF = str;
-
-	std::cout << "Adresses:" << std::endl;
-	std::cout << &str << std::endl;
-	std::cout << stringPTR << std::endl;
-	std::cout << &stringREF << std::endl << std::endl;
-
-	std::cout << "Values:" << std::endl;
-	std::cout << str << std::endl;
-	std::cout << *stringPTR << std::endl;
-	std::cout << stringREF << std::endl;
+	Weapon	Sword;
+	HumanA	A = HumanA(Sword);
+	HumanB	B;
 	return (0);
 }
