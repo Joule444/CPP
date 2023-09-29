@@ -6,11 +6,16 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:55:32 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/29 13:20:20 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/29 13:20:11 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Zombie.hpp"
+
+void	Zombie::setName(std::string name)
+{
+	this->_name = name;
+}
 
 void	Zombie::announce()
 {
