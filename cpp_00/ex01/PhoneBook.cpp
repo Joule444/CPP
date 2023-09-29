@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:27:43 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 18:02:00 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:32:56 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "./includes/PhoneBook.hpp"
 #include "./includes/color.h"
 
-void	PhoneBook::Search()
+void	PhoneBook::searchContact()
 {
 	std::string	prompt;
 	int			id;
@@ -32,7 +32,7 @@ void	PhoneBook::Search()
 	std::cout << "+" << std::endl;
 	for (int i = 1; i <= this->_nbContact; i++)
 	{
-		this->_contactList[i - 1].DisplayContact(i);
+		this->_contactList[i - 1].displayContact(i);
 		std::cout << "\t";
 		for (int i = 0; i < 4; i++)
 			std::cout << CYAN << "+----------";
@@ -53,7 +53,7 @@ void	PhoneBook::Search()
 		else
 			break ;
 	}
-	this->_contactList[id - 1].ShowContact();
+	this->_contactList[id - 1].showContact();
 }
 
 std::string	PhoneBook::_getInfo(std::string text)
@@ -75,7 +75,7 @@ std::string	PhoneBook::_getInfo(std::string text)
 }
 
 
-void	PhoneBook::AddContact()
+void	PhoneBook::addContact()
 {
 	Contact	data;
 
@@ -84,11 +84,11 @@ void	PhoneBook::AddContact()
 		std::cout << "\n\t\t--PhoneBook is full !--\n\t--This contact will replace the oldest !\n";
 	}
 	std::cout << std::endl;
-	data.set_first_name(this->_getInfo("*First Name : "));
-	data.set_last_name(this->_getInfo("*Last Name : "));
-	data.set_nick_name(this->_getInfo("*Nick Name : "));
-	data.set_phone_num(this->_getInfo("*Phone Number : "));
-	data.set_secret(this->_getInfo("*Darkest Secret : "));
+	data.setFirstName(this->_getInfo("*First Name : "));
+	data.setLastName(this->_getInfo("*Last Name : "));
+	data.setNickName(this->_getInfo("*Nick Name : "));
+	data.setPhoneNum(this->_getInfo("*Phone Number : "));
+	data.setSecret(this->_getInfo("*Darkest Secret : "));
 	std::cout << "\n\t--Contact added to the PhoneBook !--\n" << std::endl;
 	if (this->_nbContact == 8)
 	{

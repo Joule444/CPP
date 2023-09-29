@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:36:14 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 18:02:52 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:32:56 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	main(int argc, char **argv)
 		if (prompt.length() == 0)
 			std::cout << NEG_RED << "[Error]" << RED << " Empty entry, please retry !" << WHITE << std::endl;
 		else if (prompt == "ADD")
-			MyPhoneBook.AddContact();
+			MyPhoneBook.addContact();
 		else if (prompt == "SEARCH")
-			MyPhoneBook.Search();
+			MyPhoneBook.searchContact();
 		else if (prompt == "EXIT")
 		{
 			std::cout << "\n\t--Closing PhoneBook... Bye bye !--\n" << std::endl;
