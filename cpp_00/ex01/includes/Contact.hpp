@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:38:56 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 14:31:31 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:35:53 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,19 @@
 class Contact
 {
 	public:
-		Contact();
-		~Contact();
 
-		void	set_last_name(std::string last_name);
-		void	set_first_name(std::string first_name);
-		void	set_nick_name(std::string nick_name);
-		void	set_phone_num(std::string phone_num);
-		void	set_secret(std::string secret);
-		void	DisplayContact(int index);
-		void	ShowContact();
+		Contact();
+
+		void	setLastName(std::string last_name);
+		void	setFirstName(std::string first_name);
+		void	setNickName(std::string nick_name);
+		void	setPhoneNum(std::string phone_num);
+		void	setSecret(std::string secret);
+		void	displayContact(int index);
+		void	showContact();
+
 	private:
+
 		std::string	_firstName;
 		std::string	_lastName;
 		std::string	_nickName;

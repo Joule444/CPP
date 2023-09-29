@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:41:35 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/28 17:59:46 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:35:47 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	Contact::_displayInfo(std::string info)
 	std::cout << info << CYAN << "|" << WHITE;
 }
 
-void	Contact::ShowContact()
+void	Contact::showContact()
 {
 	std::cout << std::endl;
 	std::cout << "*First name : " << this->_firstName << std::endl;
@@ -39,7 +39,7 @@ void	Contact::ShowContact()
 	std::cout << std::endl;
 }
 
-void	Contact::DisplayContact(int index)
+void	Contact::displayContact(int index)
 {
 	if (this->_firstName == "")
 		return ;
@@ -53,27 +53,27 @@ void	Contact::DisplayContact(int index)
 	std::cout << std::endl;
 }
 
-void	Contact::set_first_name(std::string first_name)
+void	Contact::setFirstName(std::string first_name)
 {
 	this->_firstName = first_name;
 }
 
-void	Contact::set_last_name(std::string last_name)
+void	Contact::setLastName(std::string last_name)
 {
 	this->_lastName = last_name;
 }
 
-void	Contact::set_nick_name(std::string nick_name)
+void	Contact::setNickName(std::string nick_name)
 {
 	this->_nickName = nick_name;
 }
 
-void	Contact::set_phone_num(std::string set_phone_num)
+void	Contact::setPhoneNum(std::string setPhoneNum)
 {
-	this->_phoneNum = set_phone_num;
+	this->_phoneNum = setPhoneNum;
 }
 
-void	Contact::set_secret(std::string secret)
+void	Contact::setSecret(std::string secret)
 {
 	this->_secret = secret;
 }
@@ -85,8 +85,4 @@ Contact::Contact()
 	this->_nickName = "";
 	this->_phoneNum = "";
 	this->_secret = "";
-}
-
-Contact::~Contact()
-{
 }
