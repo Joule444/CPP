@@ -13,9 +13,14 @@
 #include "includes/Weapon.hpp"
 #include "includes/HumanB.hpp"
 
+void	HumanB::setWeapon(Weapon &type)
+{
+	this->_weapon = &type;
+}
+
 void	HumanB::attack()
 {
-	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }
 
 HumanB::HumanB(std::string name)
