@@ -19,7 +19,7 @@ class HumanB
 {
 	public:
 
-		HumanB();
+		HumanB(std::string name);
 		~HumanB();
 		
 		void	attack();

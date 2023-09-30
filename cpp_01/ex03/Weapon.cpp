@@ -22,7 +22,19 @@ void		Weapon::setType(std::string type)
 	this->_type = type;
 }
 
+Weapon::Weapon(std::string type)
+{
+	this->_type = type;
+	std::cout << "Weapon created !" << std::endl;
+}
+
 Weapon::Weapon()
 {
+	this->_type = "hands";
 	std::cout << "Weapon created !" << std::endl;
+}
+
+Weapon::~Weapon()
+{
+	std::cout << "Weapon destroyed !" << std::endl;
 }

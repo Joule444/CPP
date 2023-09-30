@@ -11,14 +11,21 @@
 /* ************************************************************************** */
 
 #include "includes/Weapon.hpp"
+#include "includes/HumanA.hpp"
 
 void	HumanA::attack()
 {
-	std::cout << this->_name << " attacks with their " << this->_weapon << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
 }
 
-HumanA::HumanA(Weapon weapon)
+HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon)
 {
+	this->_name = name;
 	this->_weapon = weapon;
 	std::cout << "Human A created !" << std::endl;
+}
+
+HumanA::~HumanA()
+{
+	std::cout << "Human A destroyed !" << std::endl;
 }
