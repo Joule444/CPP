@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:09:31 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/29 15:29:18 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/03 13:19:47 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 
 void	HumanA::attack()
 {
-	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+	std::cout << WHITE << this->_name << " attacks with their " << CYAN << this->_weapon.getType() << RESET << std::endl;
 }
 
 HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon)
 {
 	this->_name = name;
-	this->_weapon = weapon;
-	std::cout << "Human A created !" << std::endl;
+	std::cout << "Human A " << GREEN << "created !" << RESET << std::endl;
 }
 
 HumanA::~HumanA()
 {
-	std::cout << "Human A destroyed !" << std::endl;
+		std::cout << "Human A " << RED << "destroyed !" << RESET << std::endl;
 }

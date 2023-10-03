@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:12:50 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/29 15:20:10 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/03 12:50:51 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main()
 		HumanA bob("Bob", club);
 		bob.attack();
 		club.setType("some other type of club");
-		std::cout << club.getType() << std::endl;
 		bob.attack();
 	}
 	std::cout << std::endl;

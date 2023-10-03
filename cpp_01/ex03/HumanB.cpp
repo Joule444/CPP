@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:12:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/29 15:16:21 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/03 13:20:49 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,15 @@ void	HumanB::setWeapon(Weapon &type)
 
 void	HumanB::attack()
 {
-	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
+	std::cout << WHITE << this->_name << RESET << " attacks with their " << CYAN << this->_weapon->getType() << RESET << std::endl;
 }
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) : _name(name)
 {
-	this->_name = name;
-	std::cout << "Human B created !" << std::endl;
+	std::cout << "Human B " << GREEN << "created !" << RESET << std::endl;
 }
 
 HumanB::~HumanB()
 {
-	std::cout << "Human B destroyed !" << std::endl;
+	std::cout << "Human B " << RED << "destroyed !" << RESET << std::endl;
 }
