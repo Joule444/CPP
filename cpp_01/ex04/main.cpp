@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:32:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/03 17:01:48 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/03 17:06:47 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	replaceString(char *file, std::string s1, std::string s2)
 	{
 		std::cerr << RED << "Error : " << RESET << "cannot open file \""
 			<< file << "\"" << std::endl;
+		return (1);
 	}
 
 	std::string		outfileName = file;
@@ -31,6 +32,7 @@ int	replaceString(char *file, std::string s1, std::string s2)
 	if (!outfile.is_open())
 	{
 		std::cerr << RED << "Error : " << RESET << "cannot create outfile" << std::endl;
+		return (1);
 	}
 
 	std::string		line;
@@ -79,6 +81,7 @@ int	main(int argc, char **argv)
 			<< std::endl;
 		return (1);
 	}
-	replaceString(argv[1], argv[2], argv[3]);
+	if (replaceString(argv[1], argv[2], argv[3]) != 0)
+		return (1);
 	return (0);
 }
