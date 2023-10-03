@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:32:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/03 16:40:51 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/03 17:01:48 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,27 @@
 
 int	replaceString(char *file, std::string s1, std::string s2)
 {
-	std::ifstream	in(file);
+	std::ifstream	infile(file);
+	if (!infile.is_open())
+	{
+		std::cerr << RED << "Error : " << RESET << "cannot open file \""
+			<< file << "\"" << std::endl;
+	}
+
 	std::string		outfileName = file;
 	outfileName.append(".replace");
-	std::ofstream	out(outfileName.data());
+	std::ofstream	outfile(outfileName.data());
+	if (!outfile.is_open())
+	{
+		std::cerr << RED << "Error : " << RESET << "cannot create outfile" << std::endl;
+	}
+
 	std::string		line;
 	std::string		modLine;
 	std::size_t		cursor;
 	std::size_t		found;
-	while (std::getline(in, line))
+
+	while (std::getline(infile, line))
 	{
 		cursor = 0;
 		found = line.find(s1);
@@ -45,11 +57,11 @@ int	replaceString(char *file, std::string s1, std::string s2)
 				break ;
 			}
 		}
-		out << modLine << std::endl;
+		outfile << modLine << std::endl;
 		modLine = "";
 	}
-	in.close();
-	out.close();
+	infile.close();
+	outfile.close();
 	return (0);
 }
 
