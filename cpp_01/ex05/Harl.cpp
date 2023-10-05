@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:07:57 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/05 16:40:54 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/05 17:15:39 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,27 @@ void	Harl::complain( std::string level )
 			return ;
 		}
 	}
+	std::cout << "<Harl> " << "Sorry, I don't know this type of message !" << std::endl;
 }
 
 void	Harl::_error( void )
 {
-	std::cout << RED << "ERROR message !" << RESET << std::endl;
+	std::cout << "<Harl> [" << RED << "ERROR" << RESET << "] message !" << std::endl;
 }
 
 void	Harl::_warning( void )
 {
-	std::cout << YELLOW << "WARNING message !" << RESET << std::endl;
+	std::cout << "<Harl> [" << YELLOW << "WARNING" << RESET << "] message !" << std::endl;
 }
 
 void	Harl::_info( void )
 {
-	std::cout << CYAN << "INFO message !" << RESET << std::endl;
+	std::cout << "<Harl> [" << CYAN << "INFO" << RESET << "] message !" << std::endl;
 }
 
 void	Harl::_debug( void )
 {
-	std::cout << GREEN << "DEBUG message !" << RESET << std::endl;
+	std::cout << "<Harl> [" << GREEN << "DEBUG" << RESET << "] message !" << std::endl;
 }
 
 Harl::~Harl( void )

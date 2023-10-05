@@ -6,12 +6,12 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/10/05 16:09:27 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/10/05 16:58:32 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = harl
+NAME = Harl
 
 SRCS_DIR	= ./
 SRCS 		= 	main.cpp Harl.cpp
