@@ -6,12 +6,12 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/09/29 13:05:01 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/10/06 11:54:08 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = zombie
+NAME = zombieHorde
 
 SRCS_DIR	= ./
 SRCS 		= 	main.cpp Zombie.cpp zombieHorde.cpp

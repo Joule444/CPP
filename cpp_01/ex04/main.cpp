@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:32:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/03 17:06:47 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:03:15 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int	main(int argc, char **argv)
 		std::cerr << RED
 			<< "Error : "
 			<< RESET
-			<< "sed takes 3 arguments :"
+			<< "sed takes 3 arguments :\n./sed "
 			<< CYAN
-			<< "\n[filename] [string_to_replace] [new_string]"
+			<< "<filename> <string_to_replace> <new_string>"
 			<< RESET
 			<< std::endl;
 		return (1);

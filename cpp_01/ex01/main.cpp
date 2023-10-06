@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:55:29 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/09/29 14:47:05 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:53:26 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Zombie	*zombieHorde(int N, std::string name);
 
 int	main()
 {
-	int		N = 15;
+	int		N = 5;
 	Zombie	*horde;
 
 	horde = zombieHorde(N, "Foo");

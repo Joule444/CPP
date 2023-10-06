@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:04:10 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/05 17:58:05 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:07:04 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		std::cerr << "Error : HarlFilter takes one argument :\n./HarlFilter " << CYAN << "<FilterLevel>" << std::endl;
+		std::cerr << RED << "Error :" << RESET << " HarlFilter takes one argument :\n./HarlFilter " << CYAN << "<FilterLevel>" << std::endl;
 		return (1);
 	}
 	
@@ -41,19 +41,5 @@ int	main(int argc, char **argv)
 		default:
 			Karen.complain("");
 	}
-	
-
-	// std::cout << std::endl;
-	// Karen.complain("DEBUG");
-	// std::cout << std::endl;
-	// Karen.complain("INFO");
-	// std::cout << std::endl;
-	// Karen.complain("WARNING");
-	// std::cout << std::endl;
-	// Karen.complain("ERROR");
-	// std::cout << std::endl;
-	// Karen.complain("EXPLOSION");
-	// std::cout << std::endl;
-
 	return (0);
 }
