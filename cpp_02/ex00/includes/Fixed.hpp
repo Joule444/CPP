@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:30:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/06 12:34:47 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:14:34 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,15 @@ class Fixed
 		Fixed( void );
 		~Fixed( void );
 		Fixed( const Fixed &copy );
+		Fixed &operator=( const Fixed &rhs );
+
+		int	getRawBits( void ) const;
+		void	setRawBits( int const raw );
 
 	private :
 
+		int	_value;
+		static const int	_fract_part = 8;
 };
 
 #endif

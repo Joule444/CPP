@@ -6,15 +6,15 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/10/05 16:58:09 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/10/09 16:39:55 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = HarlFilter
+NAME = Fixed
 
 SRCS_DIR	= ./
-SRCS 		= 	main.cpp Harl.cpp
+SRCS 		= 	main.cpp Fixed.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
