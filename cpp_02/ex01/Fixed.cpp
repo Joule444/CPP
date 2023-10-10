@@ -6,11 +6,16 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:52:37 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/09 18:06:22 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/10 17:02:58 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Fixed.hpp"
+
+int	Fixed::toInt( void ) const
+{
+	return (this->_value >> this->_fract_part);
+}
 
 void	Fixed::setRawBits( int const raw )
 {
@@ -48,14 +53,14 @@ Fixed::Fixed( const float value )
 	std::cout << "Fixed num created !" << std::endl;
 }
 
-Fixed::Fixed( const int value )
+Fixed::Fixed(const int i)
 {
-	this->_value = value;
-	std::cout << "Fixed num created !" << std::endl;
+	this->_value = i << this->_fract_part;
+	std::cout << "Fixed int constructor called" << std::endl;
 }
 
 Fixed::Fixed( void )
 {
 	this->_value = 0;
-	std::cout << "Fixed num created !" << std::endl;
+	std::cout << "Fixed float constructor called" << std::endl;
 }

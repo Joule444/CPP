@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:30:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/09 18:05:44 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/10 17:01:33 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Fixed
 {
@@ -27,12 +28,13 @@ class Fixed
 		Fixed( const Fixed &copy );
 		Fixed &operator=( const Fixed &rhs );
 
-		int	getRawBits( void ) const;
+		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
+		int		toInt( void ) const;
 
 	private :
 
-		int	_value;
+		int					_value;
 		static const int	_fract_part = 8;
 };
 
