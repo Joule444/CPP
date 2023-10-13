@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:32:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/06 12:03:15 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/13 10:51:45 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 
 int	replaceString(char *file, std::string s1, std::string s2)
 {
+	if (!s1[0])
+	{
+		std::cerr << RED
+			<< "Error : "
+			<< RESET
+			<< "the replaced string cannot be empty !"
+			<< std::endl;
+		return (1);
+	}
 	std::ifstream	infile(file);
 	if (!infile.is_open())
 	{
