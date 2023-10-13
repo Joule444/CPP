@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:30:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/10 17:01:33 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:10:11 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ class Fixed
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 		int		toInt( void ) const;
+		float	toFloat( void ) const;
 
 	private :
 
 		int					_value;
 		static const int	_fract_part = 8;
 };
+
+std::ostream &operator << (std::ostream &out, const Fixed &f);
 
 #endif

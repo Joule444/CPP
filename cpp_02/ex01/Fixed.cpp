@@ -6,11 +6,22 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:52:37 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/10 17:02:58 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:10:05 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Fixed.hpp"
+
+std::ostream &operator<<(std::ostream &out, const Fixed &f)
+{
+	out << f.toFloat();
+	return (out);
+}
+
+float	Fixed::toFloat( void ) const
+{
+	return ((float)this->_value / (1 << this->_fract_part));
+}
 
 int	Fixed::toInt( void ) const
 {
@@ -49,7 +60,7 @@ Fixed::~Fixed( void )
 
 Fixed::Fixed( const float value )
 {
-	this->_value = value;
+	this->_value = roundf((float)value * (1 << this->_fract_part));
 	std::cout << "Fixed num created !" << std::endl;
 }
 
