@@ -6,13 +6,13 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:52:37 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/13 13:10:05 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:42:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Fixed.hpp"
 
-std::ostream &operator<<(std::ostream &out, const Fixed &f)
+std::ostream &operator<<( std::ostream &out, const Fixed &f )
 {
 	out << f.toFloat();
 	return (out);
@@ -40,7 +40,7 @@ int	Fixed::getRawBits( void ) const
 	return (this->_value);
 }
 
-Fixed & Fixed::operator=(const Fixed &rhs)
+Fixed & Fixed::operator=( const Fixed &rhs )
 {
 	this->_value = rhs.getRawBits();
 	std::cout << "Copy assignement operator called !" << std::endl;
