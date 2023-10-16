@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:52:37 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/13 15:33:46 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:57:06 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,36 @@ const Fixed	&Fixed::max( const Fixed &a, const Fixed &b )
 }
 
 /* OPERATORS OVERLOAD */
+
+Fixed	Fixed::operator++( int )
+{
+	// std::cout << "post incr used" << std::endl;
+	Fixed	tmp = Fixed(*this);
+	++(*this);
+	return (tmp);
+}
+
+Fixed	Fixed::operator--( int )
+{
+	// std::cout << "post decr used" << std::endl;
+	Fixed	tmp = Fixed(*this);
+	++(*this);
+	return (tmp);
+}
+
+Fixed	&Fixed::operator++( void )
+{
+	// std::cout << "pre incr used" << std::endl;
+	++this->_value;
+	return (*this);
+}
+
+Fixed	&Fixed::operator--( void )
+{
+	// std::cout << "pre decr used" << std::endl;
+	--this->_value;
+	return (*this);
+}
 
 bool	Fixed::operator<(const Fixed &rhs) const
 {
@@ -97,7 +127,6 @@ Fixed Fixed::operator+( const Fixed &rhs ) const
 Fixed & Fixed::operator=( const Fixed &rhs )
 {
 	this->_value = rhs.getRawBits();
-	std::cout << "Copy assignement operator called !" << std::endl;
 	return (*this);
 }
 
@@ -121,13 +150,11 @@ int	Fixed::toInt( void ) const
 
 void	Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called !" << std::endl;
 	this->_value = raw;
 }
 
 int	Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called !" << std::endl;
 	return (this->_value);
 }
 
@@ -136,28 +163,23 @@ int	Fixed::getRawBits( void ) const
 Fixed::Fixed( const Fixed &copy )
 {
 	this->_value = copy.getRawBits();
-	std::cout << "Copy created !" << std::endl;
 }
 
 Fixed::~Fixed( void )
 {
-	std::cout << "Fixed num destroyed !" << std::endl;
 }
 
 Fixed::Fixed( const float value )
 {
 	this->_value = roundf((float)value * (1 << this->_fract_part));
-	std::cout << "Fixed num created !" << std::endl;
 }
 
 Fixed::Fixed(const int i)
 {
 	this->_value = i << this->_fract_part;
-	std::cout << "Fixed int constructor called" << std::endl;
 }
 
 Fixed::Fixed( void )
 {
 	this->_value = 0;
-	std::cout << "Fixed float constructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:30:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/13 15:34:12 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:50:51 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,15 @@ class Fixed
 		~Fixed( void );
 		Fixed( const Fixed &copy );
 		
-		Fixed &operator=( const Fixed &rhs );
-		Fixed operator+( const Fixed &rhs ) const;
-		Fixed operator-( const Fixed &rhs ) const;
-		Fixed operator*( const Fixed &rhs ) const;
-		Fixed operator/( const Fixed &rhs ) const;
+		Fixed	&operator=( const Fixed &rhs );
+		Fixed	operator+( const Fixed &rhs ) const;
+		Fixed	operator-( const Fixed &rhs ) const;
+		Fixed	operator*( const Fixed &rhs ) const;
+		Fixed	operator/( const Fixed &rhs ) const;
+		Fixed	&operator++( void );
+		Fixed	&operator--( void );
+		Fixed	operator++( int );
+		Fixed	operator--( int );
 		bool	operator==(const Fixed &rhs) const;
 		bool	operator!=(const Fixed &rhs) const;
 		bool	operator<=(const Fixed &rhs) const;
