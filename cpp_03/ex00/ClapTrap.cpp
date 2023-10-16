@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:25:20 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/16 16:57:18 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:06:17 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,12 @@ void	ClapTrap::attack( const std::string &target )
 
 ClapTrap & ClapTrap::operator=(const ClapTrap &rhs)
 {
-	(void) rhs;
-	std::cout << "Copy assignement operator called !" << std::endl;
+	this->_name = rhs._name;
+	this->_hitPts = rhs._hitPts;
+	this->_energyPts = rhs._energyPts;
+	this->_attackDmg = rhs._attackDmg;
+	std::cout << "ClapTrap copy operator called from " 
+		<< CYAN << this->_name << RESET << std::endl;
 	return (*this);
 }
 
@@ -105,16 +109,25 @@ ClapTrap::ClapTrap( std::string name ): _name(name), _hitPts(10), _energyPts(10)
 
 ClapTrap::ClapTrap( const ClapTrap &copy )
 {
-	(void) copy;
-	std::cout << "ClapTrap copy created !" << std::endl;
+	this->_name = copy._name;
+	this->_hitPts = copy._hitPts;
+	this->_energyPts = copy._energyPts;
+	this->_attackDmg = copy._attackDmg;
+	std::cout << "ClapTrap copy from " 
+		<< CYAN << this->_name << RESET 
+		<< " created !" << std::endl;
 }
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << "ClapTrap destroyed !" << std::endl;
+	std::cout << "ClapTrap " 
+		<< CYAN << this->_name << RESET 
+		<< " destroyed !" << std::endl;
 }
 
 ClapTrap::ClapTrap( void ) : _name("Unnamed"), _hitPts(10), _energyPts(10), _attackDmg(0)
 {
-	std::cout << "ClapTrap created !" << std::endl;
+	std::cout << "ClapTrap " 
+		<< CYAN << "Unnamed" << RESET 
+		<< " created !" << std::endl;
 }

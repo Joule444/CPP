@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:18:40 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/16 16:53:22 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:08:02 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ int	main( void )
 	
 	foo.beRepaired(5);
 	std::cout << std::endl;
+
+	ClapTrap bar = ClapTrap(foo);
+	std::cout << std::endl;
 	
 	foo.takeDamage(8);
 	std::cout << std::endl;
@@ -36,6 +39,15 @@ int	main( void )
 	std::cout << std::endl;
 
 	foo.takeDamage(10);
+	std::cout << std::endl;
+	
+	bar.attack("Lol");
+	std::cout << std::endl;
+
+	ClapTrap	fubar = foo;
+	std::cout << std::endl;
+	
+	fubar.attack("Yo");
 	std::cout << std::endl;
 
 	return (0);
