@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:25:20 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/16 17:06:17 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:01:06 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ClapTrap::attack( const std::string &target )
 	}
 	std::cout << CYAN << this->_name << RESET
 		<< " attacks " << YELLOW << target << RESET
-		<< ", causing " << RED << "10" << RESET
+		<< ", causing " << RED << this->_attackDmg << RESET
 		<< " points of damage !" << std::endl;
 }
 
