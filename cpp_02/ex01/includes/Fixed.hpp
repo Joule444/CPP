@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:30:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/13 14:41:48 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:56:37 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class Fixed
 		Fixed( const float value );
 		~Fixed( void );
 		Fixed( const Fixed &copy );
+		
 		Fixed &operator=( const Fixed &rhs );
-
+		
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 		int		toInt( void ) const;
