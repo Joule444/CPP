@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:52:37 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/16 13:57:06 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 14:20:39 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ const Fixed	&Fixed::max( const Fixed &a, const Fixed &b )
 
 /* OPERATORS OVERLOAD */
 
+//Post Incrementation
 Fixed	Fixed::operator++( int )
 {
 	// std::cout << "post incr used" << std::endl;
@@ -52,6 +53,7 @@ Fixed	Fixed::operator++( int )
 	return (tmp);
 }
 
+//Post Decrementation
 Fixed	Fixed::operator--( int )
 {
 	// std::cout << "post decr used" << std::endl;
@@ -60,16 +62,16 @@ Fixed	Fixed::operator--( int )
 	return (tmp);
 }
 
+//Pre Incrementation
 Fixed	&Fixed::operator++( void )
 {
-	// std::cout << "pre incr used" << std::endl;
 	++this->_value;
 	return (*this);
 }
 
+//Pre Decrementation
 Fixed	&Fixed::operator--( void )
 {
-	// std::cout << "pre decr used" << std::endl;
 	--this->_value;
 	return (*this);
 }
