@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:25:20 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/17 12:01:06 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:36:40 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ void	ClapTrap::beRepaired( unsigned int amount )
 	if (this->_energyPts <= 0)
 	{
 		this->_energyPts = 0;
-		std::cout << CYAN << this->_name << RED
+		std::cout << "ClapTrap " << CYAN << this->_name << RED
 			<< " cannot be repaired, he is out of energy !" 
 			<< RESET << std::endl;
 		return ;
 	}
 	if (this->_hitPts == 0)
 	{
-		std::cout << CYAN << this->_name << RED
+		std::cout << "ClapTrap " << CYAN << this->_name << RED
 			<< " cannot be repaired, he is K.O. !" 
 			<< RESET << std::endl;
 		return ;
 	}
 	this->_hitPts += amount;
-	std::cout << CYAN << this->_name << RESET
+	std::cout << "ClapTrap " << CYAN << this->_name << RESET
 		<< " is repaired with " << GREEN << amount << RESET
 		<< " Hit Points !" << std::endl;
 	if (this->_hitPts > 10)
@@ -44,18 +44,18 @@ void	ClapTrap::takeDamage( unsigned int amount )
 {
 	if (this->_hitPts == 0)
 	{
-		std::cout << CYAN << this->_name << RED
+		std::cout << "ClapTrap " << CYAN << this->_name << RED
 		<< " is already K.O. !" << RESET << std::endl;
 		return ;
 	}
 	this->_hitPts -= amount;
-	std::cout << CYAN << this->_name << RESET
+	std::cout << "ClapTrap " << CYAN << this->_name << RESET
 		<< " takes " << RED << amount << RESET
 		<< " points of damage !" << std::endl;
 	if (this->_hitPts <= 0)
 	{
 		this->_hitPts = 0;
-		std::cout << CYAN << this->_name << PURPLE
+		std::cout << "ClapTrap " << CYAN << this->_name << PURPLE
 		<< " is now K.O. !" << RESET << std::endl;
 	}
 }
@@ -65,7 +65,7 @@ void	ClapTrap::attack( const std::string &target )
 	(void) this->_attackDmg;
 	if (this->_hitPts == 0)
 	{
-		std::cout << CYAN << this->_name << RED
+		std::cout << "ClapTrap " << CYAN << this->_name << RED
 		<< " is K.O., he cannot attack !"
 		<< RESET << std::endl;
 		return ;
@@ -74,12 +74,12 @@ void	ClapTrap::attack( const std::string &target )
 	if (this->_energyPts < 0)
 	{
 		this->_energyPts = 0;
-		std::cout << CYAN << this->_name << RED
+		std::cout << "ClapTrap " << CYAN << this->_name << RED
 			<< " cannot attack, he is out of energy !" 
 			<< RESET << std::endl;
 		return ;
 	}
-	std::cout << CYAN << this->_name << RESET
+	std::cout << "ClapTrap " << CYAN << this->_name << RESET
 		<< " attacks " << YELLOW << target << RESET
 		<< ", causing " << RED << this->_attackDmg << RESET
 		<< " points of damage !" << std::endl;
@@ -87,7 +87,7 @@ void	ClapTrap::attack( const std::string &target )
 
 /* Operators Overload */
 
-ClapTrap & ClapTrap::operator=(const ClapTrap &rhs)
+ClapTrap & ClapTrap::operator=( const ClapTrap &rhs )
 {
 	this->_name = rhs._name;
 	this->_hitPts = rhs._hitPts;
