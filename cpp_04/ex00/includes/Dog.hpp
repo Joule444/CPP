@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:05:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 16:07:09 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 16:51:00 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Dog: public Animal
 {
 	public:
 
-		// Constructors & Destructors
+		//Constructors & Destructors
 		Dog( void );
 		~Dog( void );
 		Dog( const Dog &copy );

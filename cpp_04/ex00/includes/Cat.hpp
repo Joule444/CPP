@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:05:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 16:07:44 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 16:50:58 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Cat: public Animal
 {
 	public:
 
-		// Constructors & Destructors
+		//Constructors & Destructors
 		Cat( void );
 		~Cat( void );
 		Cat( const Cat &copy );

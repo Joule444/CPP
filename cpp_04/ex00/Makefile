@@ -6,15 +6,15 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/10/16 15:59:43 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/10/19 17:06:39 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = ClapTrap
+NAME = Animal
 
 SRCS_DIR	= ./
-SRCS 		= 	main.cpp ClapTrap.cpp
+SRCS 		= 	main.cpp Animal.cpp Cat.cpp Dog.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
