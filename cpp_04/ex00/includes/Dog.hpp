@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:05:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 16:51:00 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:10:24 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class Dog: public Animal
 		
 		//Operators Overload
 		Dog &operator=( const Dog &rhs );
+
+		//Members Functions
+		virtual void	makeSound( void ) const;
 	
 	private:
 };

@@ -6,11 +6,19 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:49:03 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 17:15:52 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:09:44 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Dog.hpp"
+
+/* Members Functions */
+
+void	Dog::makeSound( void ) const
+{
+	std::cout << "[" << CYAN << this->type << RESET
+		<< "] : Waf !" << std::endl;
+}
 
 /* Operators Overload */
 

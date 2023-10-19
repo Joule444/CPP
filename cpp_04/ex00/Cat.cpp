@@ -6,11 +6,19 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:49:03 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 17:15:52 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:09:40 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Cat.hpp"
+
+/* Members Functions */
+
+void	Cat::makeSound( void ) const
+{
+	std::cout << "[" << CYAN << this->type << RESET
+		<< "] : Miaouw !" << std::endl;
+}
 
 /* Operators Overload */
 

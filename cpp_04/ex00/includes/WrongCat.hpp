@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:05:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 18:10:31 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:25:16 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-	#define CAT_HPP
+#ifndef WRONGCAT_HPP
+	#define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat: public Animal
+class WrongCat: public WrongAnimal
 {
 	public:
 
 		//Constructors & Destructors
-		Cat( void );
-		~Cat( void );
-		Cat( const Cat &copy );
+		WrongCat( void );
+		~WrongCat( void );
+		WrongCat( const WrongCat &copy );
 		
 		//Operators Overload
-		Cat &operator=( const Cat &rhs );
+		WrongCat &operator=( const WrongCat &rhs );
 
 		//Members Functions
 		virtual void	makeSound( void ) const;

@@ -1,55 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:49:03 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 18:09:53 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:24:24 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Animal.hpp"
+#include "includes/WrongAnimal.hpp"
 
 /* Members Functions */
 
-void	Animal::makeSound( void ) const
+void	WrongAnimal::makeSound( void ) const
 {
 	std::cout << "[" << CYAN << this->type << RESET
-		<< "] : *Random animal sound*" << std::endl;
+		<< "] : *Random wrong animal sound*" << std::endl;
 }
 
-std::string	Animal::getType( void ) const
+std::string	WrongAnimal::getType( void ) const
 {
 	return (this->type);
 }
 
 /* Operators Overload */
 
-Animal & Animal::operator=(const Animal &rhs)
+WrongAnimal & WrongAnimal::operator=(const WrongAnimal &rhs)
 {
 	this->type = rhs.getType();
-	std::cout << "Animal copy operator called !" << std::endl;
+	std::cout << "Wrong animal copy operator called !" << std::endl;
 	return (*this);
 }
 
 /* Constr & Destr */
 
-Animal::Animal( const Animal &copy )
+WrongAnimal::WrongAnimal( const WrongAnimal &copy )
 {
 	this->type = copy.getType();
-	std::cout << "Animal copy created !" << std::endl;
+	std::cout << "Wrong animal copy created !" << std::endl;
 }
 
-Animal::~Animal( void )
+WrongAnimal::~WrongAnimal( void )
 {
-	std::cout << "Animal " << RED << "destroyed "
+	std::cout << "Wrong animal " << RED << "destroyed "
 		<< RESET << "!" << std::endl;
 }
 
-Animal::Animal( void ): type("Undefined animal")
+WrongAnimal::WrongAnimal( void ): type("Undefined wrong animal")
 {
-	std::cout << "Animal " << GREEN << "created "
+	std::cout << "Wrong animal " << GREEN << "created "
 		<< RESET << "!" << std::endl;
 }

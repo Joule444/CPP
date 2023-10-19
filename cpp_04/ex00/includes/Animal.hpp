@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:01:15 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 17:15:52 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:10:15 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Animal
 
 		//Constructors & Destructors
 		Animal( void );
-		~Animal( void );
+		virtual ~Animal( void );
 		Animal( const Animal &copy );
 		
 		//Operators Overload
@@ -41,6 +41,7 @@ class Animal
 
 		//Members Functions
 		std::string	getType( void ) const;
+		virtual void	makeSound( void ) const;
 
 	protected:
 

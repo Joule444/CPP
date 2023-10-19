@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:05:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 18:10:31 by jthuysba         ###   ########.fr       */
+/*   Created: 2023/10/19 16:01:15 by jthuysba          #+#    #+#             */
+/*   Updated: 2023/10/19 18:28:10 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-	#define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+	#define WRONGANIMAL_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Cat: public Animal
+class WrongAnimal
 {
 	public:
 
 		//Constructors & Destructors
-		Cat( void );
-		~Cat( void );
-		Cat( const Cat &copy );
+		WrongAnimal( void );
+		virtual ~WrongAnimal( void );
+		WrongAnimal( const WrongAnimal &copy );
 		
 		//Operators Overload
-		Cat &operator=( const Cat &rhs );
+		WrongAnimal &operator=( const WrongAnimal &rhs );
 
 		//Members Functions
-		virtual void	makeSound( void ) const;
+		std::string	getType( void ) const;
+		void	makeSound( void ) const;
 
+	protected:
+
+		std::string	type;
+	
 	private:
 };
 
