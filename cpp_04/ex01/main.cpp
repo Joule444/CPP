@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:51:32 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/20 12:35:54 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:41:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,10 @@ int	main( void )
 	std::cout << std::endl;
 	std::cout << YELLOW << ">>>CREATING COPY<<<" << RESET << std::endl;
 	
-	const Cat* bar = new Cat();
+	// const Cat* bar = new Cat();
+	const Dog *bar = new Dog(*foo);
 	
-	bar->getBrain() = foo->getBrain();
+	// bar->getBrain() = foo->getBrain();
 	
 	std::cout << std::endl;
 	std::cout << YELLOW << ">>>COPY IDEAS<<<" << RESET << std::endl;
@@ -77,7 +78,7 @@ int	main( void )
 	std::cout << YELLOW << ">>>DESTRUCT<<<" << RESET << std::endl;
 	
 	delete foo;
-	delete bar;
+	// delete bar;
 	
 	return (0);
 }
