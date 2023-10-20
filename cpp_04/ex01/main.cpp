@@ -6,15 +6,13 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:51:32 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/20 12:23:22 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:35:54 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Animal.hpp"
 #include "includes/Dog.hpp"
 #include "includes/Cat.hpp"
-#include "includes/WrongAnimal.hpp"
-#include "includes/WrongCat.hpp"
 
 int	main( void )
 {

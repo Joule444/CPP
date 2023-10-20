@@ -6,7 +6,7 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/10/19 18:55:36 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/10/20 12:36:03 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Animal
 
 SRCS_DIR	= ./
 SRCS 		= 	main.cpp Animal.cpp Cat.cpp Dog.cpp\
-				WrongAnimal.cpp WrongCat.cpp Brain.cpp
+				Brain.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
