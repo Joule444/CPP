@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:51:32 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/20 15:41:07 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:41:59 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	main( void )
 	std::cout << YELLOW << ">>>DESTRUCT<<<" << RESET << std::endl;
 	
 	delete foo;
-	// delete bar;
+	delete bar;
 	
 	return (0);
 }
