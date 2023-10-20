@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:36:24 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 18:39:39 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:44:00 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,16 @@ class Brain
 		
 		//Operators Overload
 		Brain &operator=( const Brain &rhs );
+
+		//Members Functions
+		std::string	getIdea( int id ) const;
+		void		setIdea( int id, std::string idea );
+	
+		//Variables
+		std::string	ideas[100];
 	
 	private:
 	
-		std::string	_ideas[100];
 };
 
 #endif

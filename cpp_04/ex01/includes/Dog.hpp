@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:05:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 19:01:04 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:48:50 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 	#define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog: public Animal
 {
@@ -29,6 +30,7 @@ class Dog: public Animal
 
 		//Members Functions
 		virtual void	makeSound( void ) const;
+		Brain	&getBrain( void ) const;
 	
 	private:
 	
