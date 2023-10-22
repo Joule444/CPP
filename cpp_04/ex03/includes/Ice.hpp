@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:44:46 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/22 16:25:29 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/22 16:47:43 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Ice: public AMateria
 		Ice &operator=( const Ice &rhs );
 
 		//Members Functions
-		// virtual Ice* clone() const = 0;
+		virtual Ice* clone( void ) const;
 		// virtual void use(ICharacter & target);
 };
 

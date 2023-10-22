@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/22 16:35:19 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/22 16:51:01 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 /* Members Functions */
 
-//...
+Cure * Cure::clone( void ) const
+{
+	Cure *clone = new Cure();
+	return (clone);
+}
 
 /* Operators Overload */
 

@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/22 16:32:20 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/22 16:48:57 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 /* Members Functions */
 
-//...
+Ice * Ice::clone( void ) const
+{
+	Ice *clone = new Ice();
+	return (clone);
+}
 
 /* Operators Overload */
 
