@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 15:44:46 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 13:45:40 by jthuysba         ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2023/10/24 13:55:08 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-	#define CURE_HPP
+
+#ifndef CHARACTER_HPP
+	#define CHARACTER_HPP
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Cure: public AMateria
+class Character: public ICharacter
 {
+	private:
+	
+		std::string	_name;
+		AMateria	*_inventory[4];
+
 	public:
 	
 		//Constr & Destr
-		Cure( void );
-		~Cure( void );
-		Cure( const Cure & copy );
+		Character( void );
+		~Character( void );
+		Character( const Character & copy );
 		
 		//Operators Overload
-		Cure &operator=( const Cure &rhs );
+		Character &operator=( const Character &rhs );
 
 		//Members Functions
-		virtual Cure* clone() const;
-		// virtual void use(ICharacter & target);
+		virtual std::string const & getName( void ) const;
+		virtual void equip( AMateria* m );
+		virtual void unequip( int idx );
+		virtual void use( int idx, ICharacter& target );
 };
 
 #endif

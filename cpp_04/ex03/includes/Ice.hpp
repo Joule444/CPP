@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 15:44:46 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/22 16:47:43 by jthuysba         ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2023/10/24 13:45:37 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef ICE_HPP
 	#define ICE_HPP
@@ -17,10 +18,6 @@
 
 class Ice: public AMateria
 {
-	protected:
-
-		//...
-
 	public:
 	
 		//Constr & Destr
