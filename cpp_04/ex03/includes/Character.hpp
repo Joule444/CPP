@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2023/10/24 13:55:08 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:22:00 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Character: public ICharacter
 		Character( void );
 		~Character( void );
 		Character( const Character & copy );
+		Character( std::string name );
 		
 		//Operators Overload
 		Character &operator=( const Character &rhs );

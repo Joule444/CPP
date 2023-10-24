@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 14:20:53 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:34:13 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,52 @@ std::string const & Character::getName( void ) const
 
 Character & Character::operator=( const Character &rhs )
 {
-	
+	this->_name = rhs.getName();
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] != NULL)
+		{
+			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (rhs._inventory[i] != NULL)
+		{
+			this->_inventory[i] = rhs._inventory[i]->clone();
+		}
+	}
 	std::cout << "Character copy operator called !" << std::endl;
 	return (*this);
 }
 
 /* Constr & Destr */
 
+Character::Character( std::string name ): _name(name)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		this->_inventory[i] = NULL;
+	}
+	std::cout << "Character " << BOLD_WHITE << name << BOLD_GREEN
+		<< " created" << RESET << " !" << std::endl;
+}
+
 Character::Character( const Character & copy )
 {
 	this->_name = copy.getName();
-	
+	for (int i = 0; i < 4; i++)
+	{
+		this->_inventory[i] = NULL;
+	}
+	for (int i = 0; i< 4; i++)
+	{
+		if (copy._inventory[i] != NULL)
+		{
+			this->_inventory[i] = copy._inventory[i]->clone();
+		}
+	}
 	std::cout << "Character copy created !" << std::endl;
 }
 
@@ -81,8 +116,8 @@ Character::~Character( void )
 			delete this->_inventory[i];
 		}
 	}
-	std::cout << "Character " << BOLD_RED
-		<< "destroyed" << RESET << " !" << std::endl;
+	std::cout << "Character " << BOLD_WHITE << this->_name << BOLD_RED
+		<< " destroyed" << RESET << " !" << std::endl;
 }
 
 Character::Character( void ): _name("Unnamed")
@@ -91,6 +126,6 @@ Character::Character( void ): _name("Unnamed")
 	{
 		this->_inventory[i] = NULL;
 	}
-	std::cout << "Character " << BOLD_GREEN
-		<< "created" << RESET << " !" << std::endl;
+	std::cout << "Character " << BOLD_WHITE << "Unnamed" << BOLD_GREEN
+		<< " created" << RESET << " !" << std::endl;
 }
