@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 14:43:51 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:32:24 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@
 
 void	Character::use( int idx, ICharacter & target )
 {
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << RED << "Inventory slots range is 0-3 only !" << RESET
+			<< std::endl;
+		return ;
+	}
 	if (this->_inventory[idx] != NULL)
 	{
-		this->_inventory[idx].use(target);
+		this->_inventory[idx]->use(target);
 	}
 	else
 	{
@@ -31,13 +37,15 @@ void	Character::unequip( int idx )
 {
 	if (idx < 0 || idx > 3)
 	{
-		std::cout << RED << "Inventory slots range is 0-4 only !" << RESET
+		std::cout << RED << "Inventory slots range is 0-3 only !" << RESET
 			<< std::endl;
 		return ;
 	}
 	if (this->_inventory[idx] != NULL)
 	{
 		this->_inventory[idx] = NULL;
+		std::cout << "Slot " << BOLD_YELLOW << idx << RESET
+			<< " unequipped !" << std::endl;
 	}
 	else 
 	{

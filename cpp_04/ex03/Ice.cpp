@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 14:39:46 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:56:32 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ Ice & Ice::operator=( const Ice &rhs )
 
 /* Constr & Destr */
 
-Ice::Ice( const Ice & copy )
+Ice::Ice( const Ice & copy ): AMateria("ice")
 {
-	this->elemType = copy.getType();
+	*this = copy;
 	std::cout << "Ice Materia copy created !" << std::endl;
 }
 

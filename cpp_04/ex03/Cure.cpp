@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 14:38:27 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:56:51 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ Cure & Cure::operator=( const Cure &rhs )
 
 /* Constr & Destr */
 
-Cure::Cure( const Cure & copy )
+Cure::Cure( const Cure & copy ): AMateria("cure")
 {
-	this->elemType = copy.getType();
+	*this = copy;
 	std::cout << "Cure Materia copy created !" << std::endl;
 }
 

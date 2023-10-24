@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/22 16:36:00 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:17:13 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 
 /* Members Functions */
+
+void	AMateria::use( ICharacter & target )
+{
+	std::cout << "* nothing happen to " << BOLD_WHITE
+		<< target.getName() << RESET << std::endl;
+}
 
 std::string const & AMateria::getType( void ) const
 {
