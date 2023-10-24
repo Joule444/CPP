@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2023/10/24 14:22:00 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:53:36 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #ifndef CHARACTER_HPP
 	#define CHARACTER_HPP
 
-#include "AMateria.hpp"
 #include "ICharacter.hpp"
 
 class Character: public ICharacter
@@ -36,10 +35,10 @@ class Character: public ICharacter
 		Character &operator=( const Character &rhs );
 
 		//Members Functions
-		virtual std::string const & getName( void ) const;
-		virtual void equip( AMateria* m );
-		virtual void unequip( int idx );
-		virtual void use( int idx, ICharacter& target );
+		std::string const & getName( void ) const;
+		void equip( AMateria* m );
+		void unequip( int idx );
+		void use( int idx, ICharacter& target );
 };
 
 #endif

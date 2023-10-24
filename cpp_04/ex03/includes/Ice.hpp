@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2023/10/24 13:45:37 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:35:56 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Ice: public AMateria
 
 		//Members Functions
 		virtual Ice* clone( void ) const;
-		// virtual void use(ICharacter & target);
+		virtual void use( ICharacter & target );
 };
 
 #endif

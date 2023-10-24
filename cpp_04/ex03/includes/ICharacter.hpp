@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:44:46 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 13:55:46 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:48:39 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ICharacter
 	public:
 		virtual ~ICharacter( void ) {}
 		virtual std::string const & getName( void ) const = 0;
-		virtual void equip( AMateria* m ) = 0;
+		virtual void equip( AMateria *m ) = 0;
 		virtual void unequip( int idx ) = 0;
 		virtual void use( int idx, ICharacter& target ) = 0;
 };

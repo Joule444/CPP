@@ -6,13 +6,19 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/22 16:51:01 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:38:27 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Cure.hpp"
 
 /* Members Functions */
+
+void	Cure::use( ICharacter & target )
+{
+	std::cout << "* heals " << BOLD_WHITE << target.getName() << RESET
+		"'s wounds *" << std::endl;
+}
 
 Cure * Cure::clone( void ) const
 {

@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:44:46 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 13:45:40 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:36:00 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Cure: public AMateria
 
 		//Members Functions
 		virtual Cure* clone() const;
-		// virtual void use(ICharacter & target);
+		virtual void use( ICharacter & target );
 };
 
 #endif

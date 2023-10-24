@@ -6,7 +6,7 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/10/22 16:34:37 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/10/24 14:51:07 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = Materia
 
 SRCS_DIR	= ./
-SRCS 		= 	main.cpp AMateria.cpp Ice.cpp Cure.cpp
+SRCS 		= 	main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

@@ -6,13 +6,26 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 14:34:13 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:43:51 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Character.hpp"
 
 /* Members Functions */
+
+void	Character::use( int idx, ICharacter & target )
+{
+	if (this->_inventory[idx] != NULL)
+	{
+		this->_inventory[idx].use(target);
+	}
+	else
+	{
+		std::cout << RED << "Slot " << BOLD_YELLOW << idx
+			<< RED << " is empty !" << std::endl;
+	}
+}
 
 void	Character::unequip( int idx )
 {

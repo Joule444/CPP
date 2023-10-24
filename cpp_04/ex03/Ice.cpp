@@ -6,13 +6,20 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/22 16:48:57 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:39:46 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Ice.hpp"
 
 /* Members Functions */
+
+void	Ice::use( ICharacter & target )
+{
+	std::cout << "* shoots an ice bolt at "
+		<< BOLD_WHITE << target.getName() << RESET
+		" *" << std::endl;
+}
 
 Ice * Ice::clone( void ) const
 {
