@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:51:32 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/19 18:30:01 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:45:31 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	main( void )
 
 	std::cout << std::endl;
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
@@ -43,7 +41,6 @@ int	main( void )
 	
 	const WrongAnimal* foo = new WrongCat();
 
-	std::cout << foo->getType() << " " << std::endl;
 	foo->makeSound();
 	
 	std::cout << std::endl;
