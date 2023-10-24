@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:44:18 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 17:12:22 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:31:50 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,62 +21,45 @@
 
 int	main( void )
 {
-	// std::cout << BOLD_BLUE << "\n>>>CREATING CHARACTERS<<<" << RESET << std::endl;
-	// ICharacter* foo = new Character("Bob");
-	// ICharacter* bar = new Character("Fanta");
-
-	// std::cout << BOLD_BLUE << "\n>>>CREATING ICE MATERIA<<<" << RESET << std::endl;
-	// AMateria *tmp = new Ice();
-
-	// std::cout << BOLD_BLUE << "\n>>>EQUIPING ICE MATERIA<<<" << RESET << std::endl;
-	// foo->equip(tmp);
-	
-	// std::cout << BOLD_BLUE << "\n>>>CREATING CURE MATERIA<<<" << RESET << std::endl;
-	// tmp = new Cure();
-	
-	// std::cout << BOLD_BLUE << "\n>>>EQUIPING CURE MATERIA<<<" << RESET << std::endl;
-	// foo->equip(tmp);
-
-	// std::cout << BOLD_BLUE << "\n>>>USING ICE MATERIA<<<" << RESET << std::endl;
-	// foo->use(0, *bar);
-
-	// std::cout << BOLD_BLUE << "\n>>>USING CURE MATERIA<<<" << RESET << std::endl;
-	// foo->use(1, *bar);
-
-	// std::cout << BOLD_BLUE << "\n>>>USING OUT OF RANGE MATERIA<<<" << RESET << std::endl;
-	// foo->use(4, *bar);
-
-	// std::cout << BOLD_BLUE << "\n>>>UNEQUIPPING MATERIA<<<" << RESET << std::endl;
-	// foo->unequip(1);
-
-	// std::cout << BOLD_BLUE << "\n>>>TRYING TO USE MATERIA<<<" << RESET << std::endl;
-	// foo->use(1, *foo);
-
-	// std::cout << BOLD_BLUE << "\n>>>DELETING CHARACTERS<<<" << RESET << std::endl;
-	// delete foo;
-	// delete bar;
-	
-	// std::cout << BOLD_BLUE << "\n>>>DELETING DROPPED MATERIA<<<" << RESET << std::endl;
-	// delete tmp;
-	// std::cout << std::endl;
-
-	// return (0);
-
+	std::cout << BOLD_BLUE << "\n>>>CREATING AND FILLING SOURCE<<<" << RESET << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
+	std::cout << BOLD_BLUE << "\n>>>CREATING CHARACTERS<<<" << RESET << std::endl;
+	ICharacter* bob = new Character("Bob");
+	ICharacter* fanta = new Character("Fanta");
+
+	std::cout << BOLD_BLUE << "\n>>>CREATING ICE MATERIA<<<" << RESET << std::endl;
+	AMateria *tmp = src->createMateria("ice");
+	bob->equip(tmp);
+	
+	std::cout << BOLD_BLUE << "\n>>>CREATING CURE MATERIA<<<" << RESET << std::endl;
 	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
+	bob->equip(tmp);
+
+	std::cout << BOLD_BLUE << "\n>>>USING MATERIAS<<<" << RESET << std::endl;
+	bob->use(0, *fanta);
+	bob->use(1, *fanta);
+	bob->use(4, *fanta);
+
+	std::cout << BOLD_BLUE << "\n>>>UNEQUIPPING MATERIA<<<" << RESET << std::endl;
+	bob->unequip(1);
+	bob->use(1, *bob);
+
+	std::cout << BOLD_BLUE << "\n>>>DELETING CHARACTERS<<<" << RESET << std::endl;
 	delete bob;
-	delete me;
+	delete fanta;
+	
+	std::cout << BOLD_BLUE << "\n>>>DELETING DROPPED MATERIA<<<" << RESET << std::endl;
+	delete tmp;
+
+	std::cout << BOLD_BLUE << "\n>>>DELETING SOURCE<<<" << RESET << std::endl;
 	delete src;
+	std::cout << std::endl;
+
 	return 0;
 	
 }

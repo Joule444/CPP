@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:02 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/24 17:10:53 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:30:34 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ AMateria * MateriaSource::createMateria( std::string const & type )
 	{
 		if (this->_learned[i] != NULL && this->_learned[i]->getType() == type)
 		{
-			std::cout << "Materia clonned frome the Materia Source !"
+			std::cout << "Materia Source send a clone of the learned Materia !"
 				<< std::endl;
 			return (this->_learned[i]->clone());
 		}
