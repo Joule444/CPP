@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:04:28 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/28 15:45:16 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:03:31 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,24 @@ class Form
 		bool					getSignedStatus( void ) const;
 		int					getSignGrade( void ) const;
 		int					getExecGrade( void ) const;
+		
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Grade too high !");
+				}
+		};
+		
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Grade too low !");
+				}
+		};
 		
 	private:
 

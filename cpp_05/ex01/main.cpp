@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:42:07 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/28 15:48:26 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:07:14 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,15 @@
 
 int	main( void )
 {
-	Form	foo = Form("Area 51 Form", false, 10, 10);
-
-	std::cout << foo << std::endl;
+	try
+	{
+		Form	foo = Form("Area 51 Form", false, 154, 10);
+		std::cout << foo << std::endl;
+	}
+	catch(std::exception & e)
+	{
+		std::cout << RED << e.what() << RESET << std::endl;
+	}
 	try
 	{
 		Bureaucrat jim = Bureaucrat("Jim Halpert", 2);

@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:49:03 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/28 15:53:25 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:06:35 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,12 @@ Bureaucrat &Bureaucrat::operator=( const Bureaucrat &rhs )
 
 Bureaucrat::Bureaucrat( const std::string name, int grade ): _name(name)
 {
-	std::cout  << DARK_WHITE << "Bureaucrat : Infos Constructor !" << RESET << std::endl;
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
-	else
-		this->_grade = grade;
+	this->_grade = grade;
+	std::cout  << DARK_WHITE << "Bureaucrat : Infos Constructor !" << RESET << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat &copy ): _name(copy.getName())

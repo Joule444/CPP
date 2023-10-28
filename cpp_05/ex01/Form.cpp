@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:25:42 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/28 15:54:21 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:04:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ Form &Form::operator=( const Form &rhs )
 
 Form::Form( std::string name, bool isSigned, int signGrade, int execGrade ): _name(name), _isSigned(isSigned), _signGrade(signGrade), _execGrade(execGrade)
 {
+	if (signGrade > 150 || execGrade > 150)
+		throw (Form::GradeTooLowException());
+	else if (signGrade < 1 || execGrade < 1)
+		throw (Form::GradeTooHighException());
+	this->_isSigned = isSigned;
 	std::cout << DARK_WHITE << "Form : Infos Constructor !" << RESET << std::endl;
 }
 
