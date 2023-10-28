@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:49:03 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/27 15:43:24 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/28 15:56:23 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ std::string Bureaucrat::getName( void ) const
 
 /* Operators Overload */
 
-std::ostream &operator<<(std::ostream &out, const Bureaucrat &b)
+std::ostream &operator<<( std::ostream &out, const Bureaucrat &b )
 {
 	out << BOLD_YELLOW << b.getName()  << RESET << ", bureaucrat grade "
 		<< BOLD_BLUE << b.getGrade() << RESET ;
 	return (out);
 }
 
-Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
+Bureaucrat &Bureaucrat::operator=( const Bureaucrat &rhs )
 {
 	this->_grade = rhs.getGrade();
 	std::cout << "Bureaucrat : Copy Operator !" << std::endl;
@@ -60,7 +60,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 
 Bureaucrat::Bureaucrat( const std::string name, int grade ): _name(name)
 {
-	std::cout << "Bureaucrat : Info Constructor !" << std::endl;
+	std::cout << DARK_WHITE << "Bureaucrat : Info Constructor !" << RESET << std::endl;
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade > 150)
@@ -72,15 +72,15 @@ Bureaucrat::Bureaucrat( const std::string name, int grade ): _name(name)
 Bureaucrat::Bureaucrat( const Bureaucrat &copy ): _name(copy.getName())
 {
 	this->_grade = copy.getGrade();
-	std::cout << "Bureaucrat : Copy Constructor !" << std::endl;
+	std::cout << DARK_WHITE << "Bureaucrat : Copy Constructor !" << RESET << std::endl;
 }
 
 Bureaucrat::~Bureaucrat( void )
 {
-	std::cout << "Bureaucrat : Destructor !" << std::endl;
+	std::cout << DARK_WHITE << "Bureaucrat : Destructor !" << RESET << std::endl;
 }
 
 Bureaucrat::Bureaucrat( void ): _name("Unnamed"), _grade(150)
 {
-	std::cout << "Bureaucrat : Default Constructor !" << std::endl;
+	std::cout << DARK_WHITE << "Bureaucrat : Default Constructor !" << RESET << std::endl;
 }
