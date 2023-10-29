@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:01:59 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/27 15:44:07 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/29 12:26:21 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "color.h"
+
+class Form;
 
 class Bureaucrat
 {
@@ -31,6 +33,7 @@ class Bureaucrat
 		int			getGrade( void ) const;
 		void			incrementGrade( void );
 		void			decrementGrade( void );
+		void			signForm( Form & f );
 
 		class GradeTooHighException: public std::exception
 		{
