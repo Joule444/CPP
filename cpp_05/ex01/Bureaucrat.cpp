@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:49:03 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 12:38:50 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/29 13:56:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	Bureaucrat::signForm( Form & f )
 {
-	if (f.getSignedStatus() == true)
+	if (f.getIsSigned() == true)
 	{
 		std::cout << BOLD_YELLOW << this->_name << RESET
 			<< " couldn't sign form \"" << BOLD_CYAN
@@ -36,7 +36,7 @@ void	Bureaucrat::signForm( Form & f )
 		std::cout << BOLD_YELLOW << this->_name << RESET
 			<< " signed form \"" << BOLD_CYAN << f.getName()
 			<< RESET << "\" !" << std::endl;
-		f.getSignedStatus() = true;
+		f.signIt();
 	}
 }
 

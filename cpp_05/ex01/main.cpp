@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:42:07 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 12:27:33 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/29 13:56:49 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main( void )
 	try
 	{
 		Bureaucrat	dwight = Bureaucrat("Dwight Schrute", 3);
-		Form	foo = Form("Area 51 Form", false, 3, 10);
+		Form	foo = Form("Area 51 Form", false, 2, 10);
 		
 		dwight.signForm(foo);
 		foo.beSigned(dwight);

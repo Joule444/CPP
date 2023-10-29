@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:25:42 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 12:32:45 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/10/29 13:56:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 /* Members Functions */
 
+void	Form::signIt( void )
+{
+	this->_isSigned = true;
+}
+
 void	Form::beSigned( Bureaucrat & b )
 {
 	if (this->_isSigned == true)
 	{
 		std::cout << "Form \"" << BOLD_CYAN << this->_name
-			<< RESET << "is already signed !" << std::endl;
+			<< RESET << "\" is already signed !" << std::endl;
 		return ;
 	}
 	if (b.getGrade() > this->_signGrade)
@@ -40,7 +45,7 @@ int	Form::getSignGrade( void ) const
 	return (this->_signGrade);
 }
 
-bool	Form::getSignedStatus( void ) const
+bool	Form::getIsSigned( void ) const
 {
 	return (this->_isSigned);
 }
@@ -56,7 +61,7 @@ std::ostream &operator<<(std::ostream &out, const Form &f)
 {
 	out << "Form \"" << BOLD_CYAN << f.getName()
 		<< RESET << "\", signed status " << BOLD_WHITE
-		<< f.getSignedStatus() << RESET << ", grade to sign "
+		<< f.getIsSigned() << RESET << ", grade to sign "
 		<< BOLD_BLUE << f.getSignGrade() << RESET
 		<< ", grade to execute " << BOLD_BLUE
 		<< f.getExecGrade() << RESET << " !";
@@ -65,7 +70,7 @@ std::ostream &operator<<(std::ostream &out, const Form &f)
 
 Form &Form::operator=( const Form &rhs )
 {
-	this->_isSigned = rhs.getSignedStatus();	
+	this->_isSigned = rhs.getIsSigned();	
 	std::cout << "Form : Copy Operator" << std::endl;
 	return (*this);
 }
@@ -82,7 +87,7 @@ Form::Form( std::string name, bool isSigned, int signGrade, int execGrade ): _na
 	std::cout << DARK_WHITE << "Form : Infos Constructor" << RESET << std::endl;
 }
 
-Form::Form( const Form &copy ): _name(copy.getName()), _isSigned(copy.getSignedStatus()), _signGrade(copy.getSignGrade()), _execGrade(copy.getExecGrade())
+Form::Form( const Form &copy ): _name(copy.getName()), _isSigned(copy.getIsSigned()), _signGrade(copy.getSignGrade()), _execGrade(copy.getExecGrade())
 {
 	std::cout << DARK_WHITE << "Form : Copy Constructor" << RESET << std::endl;
 }
