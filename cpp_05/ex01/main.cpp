@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:42:07 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 13:56:49 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:55:11 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,16 @@ int	main( void )
 	try
 	{
 		Bureaucrat	dwight = Bureaucrat("Dwight Schrute", 3);
-		Form	foo = Form("Area 51 Form", false, 2, 10);
+		Form	foo = Form("Michael Scarn's secret script", 3, 10);
 		
+		std::cout << dwight << std::endl;
+		std::cout << foo << std::endl;
 		dwight.signForm(foo);
 		foo.beSigned(dwight);
-		std::cout << foo << std::endl;
 	}
 	catch(std::exception & e)
 	{
 		std::cout << RED << e.what() << RESET << std::endl;
 	}
-	// try
-	// {
-	// 	Bureaucrat jim = Bureaucrat("Jim Halpert", 2);
-	// 	std::cout << jim << std::endl;
-	// 	jim.incrementGrade();
-	// 	std::cout << jim << std::endl;
-	// }
-	// catch (std::exception & e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << std::endl;
-	// try
-	// {
-	// 	Bureaucrat michael = Bureaucrat("Michael Scott", 1);
-	// 	std::cout << michael << std::endl;
-	// 	michael.incrementGrade();
-	// 	std::cout << michael << std::endl;
-	// }
-	// catch (std::exception & e)
-	// {
-	// 	std::cout << RED << e.what() << RESET << std::endl;
-	// }
 	return (0);
 }

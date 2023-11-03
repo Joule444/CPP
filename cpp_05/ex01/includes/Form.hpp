@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:04:28 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 13:56:07 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:47:20 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form
 		Form( void );
 		~Form( void );
 		Form( const Form &copy );
-		Form( std::string name, bool isSigned, int signGrade, int execGrade );
+		Form( std::string name, int signGrade, int execGrade );
 	
 		Form &operator=( const Form &rhs );
 
