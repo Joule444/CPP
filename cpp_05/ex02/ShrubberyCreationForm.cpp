@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:25:42 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 17:49:54 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:35:46 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,7 @@ void	shrubIt( std::ofstream &out )
 
 void	ShrubberyCreationForm::beExecuted( Bureaucrat const & executor ) const
 {
-	try
-	{
-		this->execute(executor);
-	}
-	catch(const AForm::FormNotSignedException & e)
-	{
-		throw (e);
-	}
-	catch(const AForm::GradeTooLowException & e)
-	{
-		throw (e);
-	}
+	this->execute(executor);
 
 	std::string		outfile = this->_target + "_shrubbery";
 	std::ofstream	of;
@@ -76,21 +65,9 @@ const std::string ShrubberyCreationForm::getTarget( void ) const
 
 /* Operators Overload */
 
-// std::ostream &operator<<(std::ostream &out, const AForm &f)
-// {
-// 	out << "Form \"" << BOLD_CYAN << f.getName()
-// 		<< RESET << "\", signed status " << BOLD_WHITE
-// 		<< f.getIsSigned() << RESET << ", grade to sign "
-// 		<< BOLD_BLUE << f.getSignGrade() << RESET
-// 		<< ", grade to execute " << BOLD_BLUE
-// 		<< f.getExecGrade() << RESET << " !";
-// 	return (out);
-// }
-
 ShrubberyCreationForm &ShrubberyCreationForm::operator=( const ShrubberyCreationForm &rhs )
 {
 	(void) rhs;
-	//WIP
 	std::cout << "Shrub. Form : Copy Operator" << std::endl;
 	return (*this);
 }
@@ -99,7 +76,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=( const ShrubberyCreation
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string target ): AForm("Shrubbery Creation Form", 145, 137), _target(target)
 {
-	//WIP
 	std::cout << DARK_WHITE << "Shrub. Form : Params Constructor" << RESET << std::endl;
 }
 

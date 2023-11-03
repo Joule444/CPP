@@ -6,13 +6,15 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 14:13:21 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 15:42:42 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:25:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 	#define ROBOTOMYREQUESTFORM_HPP
 
+#include <cstdlib>
+#include <ctime>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
@@ -28,6 +30,7 @@ class RobotomyRequestForm: public AForm
 		RobotomyRequestForm &operator=( const RobotomyRequestForm &rhs );
 
 		const std::string getTarget( void ) const;
+		virtual void		beExecuted( Bureaucrat const & executor ) const;
 		
 	private:
 

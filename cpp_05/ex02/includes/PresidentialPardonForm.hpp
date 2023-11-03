@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 14:13:21 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 15:41:43 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:44:56 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class PresidentialPardonForm: public AForm
 		PresidentialPardonForm &operator=( const PresidentialPardonForm &rhs );
 
 		const std::string getTarget( void ) const;
+		virtual void		beExecuted( Bureaucrat const & executor ) const;
 		
 	private:
 

@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:25:42 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 15:49:04 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:51:55 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 /* Members Functions */
 
+void	PresidentialPardonForm::beExecuted( Bureaucrat const &executor ) const
+{
+	this->execute(executor);
+	std::cout << "Form \"" << BOLD_CYAN << this->getName() << RESET
+		<< "\" is executed by " << BOLD_YELLOW 
+		<< executor.getName() << RESET << " !" << std::endl;
+	std::cout << BOLD_GREEN << this->_target << RESET
+		<< " has been pardoned by Zaphod Beeblebrox !" << std::endl;
+}
+
 const std::string PresidentialPardonForm::getTarget( void ) const
 {
 	return (this->_target);
 }
 
 /* Operators Overload */
-
-// std::ostream &operator<<(std::ostream &out, const AForm &f)
-// {
-// 	out << "Form \"" << BOLD_CYAN << f.getName()
-// 		<< RESET << "\", signed status " << BOLD_WHITE
-// 		<< f.getIsSigned() << RESET << ", grade to sign "
-// 		<< BOLD_BLUE << f.getSignGrade() << RESET
-// 		<< ", grade to execute " << BOLD_BLUE
-// 		<< f.getExecGrade() << RESET << " !";
-// 	return (out);
-// }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=( const PresidentialPardonForm &rhs )
 {
@@ -42,7 +41,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=( const PresidentialPar
 
 /* Constr & Destr */
 
-PresidentialPardonForm::PresidentialPardonForm( std::string target ): AForm("Presidential Pardon Form", 72, 45), _target(target)
+PresidentialPardonForm::PresidentialPardonForm( std::string target ): AForm("Presidential Pardon Form", 25, 5), _target(target)
 {
 	//WIP
 	std::cout << DARK_WHITE << "Pres. Form : Params Constructor" << RESET << std::endl;
@@ -58,7 +57,7 @@ PresidentialPardonForm::~PresidentialPardonForm( void )
 	std::cout << DARK_WHITE << "Pres. Form : Destructor" << RESET << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( void ): AForm("Shrubbery Creation Form", 72, 45), _target("undefined")
+PresidentialPardonForm::PresidentialPardonForm( void ): AForm("Presidential Pardon Form", 25, 5), _target("undefined")
 {
 	std::cout << DARK_WHITE << "Pres. Form : Default Constructor" << RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:42:07 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 17:51:42 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:51:34 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,48 @@
 
 int	main( void )
 {
-	ShrubberyCreationForm foo = ShrubberyCreationForm("house");
+	ShrubberyCreationForm foo = ShrubberyCreationForm("office");
 	
 	try
 	{
-		Bureaucrat	d = Bureaucrat("Dwight", 137);
-		std::cout << d << std::endl;
-		foo.beSigned(d);
-		foo.beExecuted(d);
+		Bureaucrat	dfoo = Bureaucrat("Dwight", 42);
+		std::cout << dfoo << std::endl;
+		foo.beSigned(dfoo);
+		foo.beExecuted(dfoo);
 	}
 	catch (const std::exception& e)
+	{
+		std::cout << RED << e.what() << '\n';
+	}
+	
+	std::cout << std::endl;
+	
+	RobotomyRequestForm bar = RobotomyRequestForm("Creed");
+	
+	try
+	{
+		Bureaucrat	jbar = Bureaucrat("Jim", 45);
+		std::cout << jbar << std::endl;
+		bar.beSigned(jbar);
+		bar.beExecuted(jbar);
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << RED << e.what() << '\n';
+	}
+	
+	std::cout << std::endl;
+	
+	PresidentialPardonForm fubar = PresidentialPardonForm("Ryan");
+	
+	try
+	{
+		Bureaucrat	mfubar = Bureaucrat("Michael", 1);
+		std::cout << mfubar << std::endl;
+		fubar.beSigned(mfubar);
+		fubar.beExecuted(mfubar);
+	}
+	catch (const std::exception &e)
 	{
 		std::cout << RED << e.what() << '\n';
 	}
