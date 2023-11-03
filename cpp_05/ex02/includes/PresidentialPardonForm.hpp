@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 14:13:21 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 20:44:56 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:30:46 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ class PresidentialPardonForm: public AForm
 
 		const std::string	_target;
 };
-
-// std::ostream &operator<<(std::ostream &out, const AForm &f);
 
 #endif
