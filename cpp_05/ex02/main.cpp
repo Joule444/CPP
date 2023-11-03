@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:42:07 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 20:51:34 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:24:39 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ int	main( void )
 	
 	try
 	{
-		Bureaucrat	mfubar = Bureaucrat("Michael", 1);
+		Bureaucrat	mfubar = Bureaucrat("Michael", 25);
 		std::cout << mfubar << std::endl;
 		fubar.beSigned(mfubar);
-		fubar.beExecuted(mfubar);
+		mfubar.executeForm(fubar);
 	}
 	catch (const std::exception &e)
 	{

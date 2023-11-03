@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:49:03 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 15:20:34 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:19:13 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "includes/AForm.hpp"
 
 /* Members Functions */
+
+void	Bureaucrat::executeForm( AForm const &form )
+{
+	form.beExecuted(*this);
+}
 
 void	Bureaucrat::signForm( AForm & f )
 {

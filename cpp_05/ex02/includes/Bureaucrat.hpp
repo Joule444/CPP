@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:01:59 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 14:10:02 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:13:43 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Bureaucrat
 		void			incrementGrade( void );
 		void			decrementGrade( void );
 		void			signForm( AForm & f );
+		void			executeForm( AForm const &form );
 
 		class GradeTooHighException: public std::exception
 		{
