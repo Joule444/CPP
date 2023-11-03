@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:42:07 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 17:35:01 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:51:42 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,19 @@
 
 int	main( void )
 {
-	ShrubberyCreationForm foo;
-	Bureaucrat	d = Bureaucrat("Dwight", 42);
+	ShrubberyCreationForm foo = ShrubberyCreationForm("house");
 	
-	foo.beSigned(d);
+	try
+	{
+		Bureaucrat	d = Bureaucrat("Dwight", 137);
+		std::cout << d << std::endl;
+		foo.beSigned(d);
+		foo.beExecuted(d);
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << RED << e.what() << '\n';
+	}
+	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:25:42 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 17:33:28 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:49:54 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 /* Other Functions */
 
-void	drawTrees( std::ofstream &out )
+void	shrubIt( std::ofstream &out )
 {
-	out << GREEN << "					,@@@@@@@," << std::endl;
-	out << GREEN << "		 ,,,.   ,@@@@@@/@@,  .oo8888o." << std::endl;
-	out << GREEN << "	 ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl;
-	out << GREEN << " ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'" << std::endl;
-	out << GREEN << " %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'" << std::endl;
-	out << GREEN << "	%&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'" << std::endl;
-	out << GREEN << " `&%\\ ` /%&'    |.|        \\ '|8'" << std::endl;
-	out << GREEN << "		 |o|        | |         | |" << std::endl;
-	out << GREEN << "		 |.|        | |         | |" << std::endl;
-	out << GREEN << " _\\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_" << std::endl;
+	out << "					,@@@@@@@," << std::endl;
+	out << "		,,,.    ,@@@@@@/@@, .oo8888o." << std::endl;
+	out << "	,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl;
+	out << "  ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'" << std::endl;
+	out << "  %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'" << std::endl;
+	out << "	%&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'" << std::endl;
+	out << "   `&%\\ ` /%&'    |.|        \\ '|8'" << std::endl;
+	out << "		 |o|        | |         | |" << std::endl;
+	out << "		 |.|        | |         | |" << std::endl;
+	out << " _\\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_" << std::endl;
 }
 
 /* Members Functions */
@@ -36,9 +36,13 @@ void	ShrubberyCreationForm::beExecuted( Bureaucrat const & executor ) const
 	{
 		this->execute(executor);
 	}
-	catch(const std::exception & e)
+	catch(const AForm::FormNotSignedException & e)
 	{
-		std::cout << e.what() << '\n';
+		throw (e);
+	}
+	catch(const AForm::GradeTooLowException & e)
+	{
+		throw (e);
 	}
 
 	std::string		outfile = this->_target + "_shrubbery";
@@ -58,8 +62,11 @@ void	ShrubberyCreationForm::beExecuted( Bureaucrat const & executor ) const
 		std::cout << e.what() << '\n';
 		return ;
 	}
-	drawTrees(of);
+	shrubIt(of);
 	of.close();
+	std::cout << "Form \"" << BOLD_CYAN << this->getName() << RESET
+		<< "\" is executed by " << BOLD_YELLOW 
+		<< executor.getName() << RESET << " !" << std::endl;
 }
 
 const std::string ShrubberyCreationForm::getTarget( void ) const
