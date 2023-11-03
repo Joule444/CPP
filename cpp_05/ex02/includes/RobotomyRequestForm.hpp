@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 14:13:21 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 17:19:47 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:42:42 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-	#define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+	#define ROBOTOMYREQUESTFORM_HPP
 
-#include <fstream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-class ShrubberyCreationForm: public AForm
+class RobotomyRequestForm: public AForm
 {
 	public:
 	
-		ShrubberyCreationForm( void );
-		~ShrubberyCreationForm( void );
-		ShrubberyCreationForm( const ShrubberyCreationForm &copy );
-		ShrubberyCreationForm( std::string target );
+		RobotomyRequestForm( void );
+		~RobotomyRequestForm( void );
+		RobotomyRequestForm( const RobotomyRequestForm &copy );
+		RobotomyRequestForm( std::string target );
 	
-		ShrubberyCreationForm &operator=( const ShrubberyCreationForm &rhs );
+		RobotomyRequestForm &operator=( const RobotomyRequestForm &rhs );
 
 		const std::string getTarget( void ) const;
-		virtual void		beExecuted( Bureaucrat const & executor ) const;
-
+		
 	private:
 
 		const std::string	_target;

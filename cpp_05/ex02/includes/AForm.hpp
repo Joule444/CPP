@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:04:28 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 14:06:19 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:19:44 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class AForm
 	public:
 	
 		AForm( void );
-		~AForm( void );
+		virtual ~AForm( void );
 		AForm( const AForm &copy );
-		AForm( std::string name, bool isSigned, int signGrade, int execGrade );
+		AForm( std::string name, int signGrade, int execGrade );
 	
 		AForm &operator=( const AForm &rhs );
 
@@ -32,6 +32,8 @@ class AForm
 		int					getExecGrade( void ) const;
 		void					beSigned( Bureaucrat & b );
 		void					signIt( void );
+		virtual void		execute( Bureaucrat const & executor ) const;
+		virtual void		beExecuted( Bureaucrat const & executor ) const = 0;
 		
 		class GradeTooHighException: public std::exception
 		{
@@ -50,7 +52,16 @@ class AForm
 					return ("Grade too low !");
 				}
 		};
-		
+
+		class FormNotSignedException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Form not signed !");
+				}
+		};
+
 	private:
 
 		const std::string	_name;

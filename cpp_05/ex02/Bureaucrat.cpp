@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:49:03 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 14:10:25 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:20:34 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ Bureaucrat::Bureaucrat( const std::string name, int grade ): _name(name)
 	else if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
 	this->_grade = grade;
-	std::cout  << DARK_WHITE << "Bureaucrat : Infos Constructor" << RESET << std::endl;
+	std::cout  << DARK_WHITE << "Bureaucrat : Params Constructor" << RESET << std::endl;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat &copy ): _name(copy.getName())

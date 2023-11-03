@@ -6,13 +6,25 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:25:42 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/10/29 14:07:53 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:16:01 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/AForm.hpp"
 
 /* Members Functions */
+
+void	AForm::execute( Bureaucrat const & executor ) const
+{
+	if (this->getIsSigned() == false)
+	{
+		throw (AForm::FormNotSignedException());
+	}
+	if (executor.getGrade() > this->getExecGrade())
+	{
+		throw (AForm::GradeTooLowException());
+	}
+}
 
 void	AForm::signIt( void )
 {
@@ -77,14 +89,13 @@ AForm &AForm::operator=( const AForm &rhs )
 
 /* Constr & Destr */
 
-AForm::AForm( std::string name, bool isSigned, int signGrade, int execGrade ): _name(name), _isSigned(isSigned), _signGrade(signGrade), _execGrade(execGrade)
+AForm::AForm( std::string name, int signGrade, int execGrade ): _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
 {
 	if (signGrade > 150 || execGrade > 150)
 		throw (AForm::GradeTooLowException());
 	else if (signGrade < 1 || execGrade < 1)
 		throw (AForm::GradeTooHighException());
-	this->_isSigned = isSigned;
-	std::cout << DARK_WHITE << "Form : Infos Constructor" << RESET << std::endl;
+	std::cout << DARK_WHITE << "Form : Params Constructor" << RESET << std::endl;
 }
 
 AForm::AForm( const AForm &copy ): _name(copy.getName()), _isSigned(copy.getIsSigned()), _signGrade(copy.getSignGrade()), _execGrade(copy.getExecGrade())
