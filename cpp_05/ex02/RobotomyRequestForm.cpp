@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:25:42 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 20:35:40 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:29:25 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ const std::string RobotomyRequestForm::getTarget( void ) const
 RobotomyRequestForm &RobotomyRequestForm::operator=( const RobotomyRequestForm &rhs )
 {
 	(void) rhs;
-	//WIP
 	std::cout << "Robot. Form : Copy Operator" << std::endl;
 	return (*this);
 }
@@ -55,7 +54,6 @@ RobotomyRequestForm &RobotomyRequestForm::operator=( const RobotomyRequestForm &
 
 RobotomyRequestForm::RobotomyRequestForm( std::string target ): AForm("Robotomy Request Form", 72, 45), _target(target)
 {
-	//WIP
 	std::cout << DARK_WHITE << "Robot. Form : Params Constructor" << RESET << std::endl;
 }
 

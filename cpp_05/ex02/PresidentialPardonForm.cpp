@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 14:25:42 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/03 20:51:55 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:27:43 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ const std::string PresidentialPardonForm::getTarget( void ) const
 PresidentialPardonForm &PresidentialPardonForm::operator=( const PresidentialPardonForm &rhs )
 {
 	(void) rhs;
-	//WIP
 	std::cout << "Pres. Form : Copy Operator" << std::endl;
 	return (*this);
 }
@@ -43,7 +42,6 @@ PresidentialPardonForm &PresidentialPardonForm::operator=( const PresidentialPar
 
 PresidentialPardonForm::PresidentialPardonForm( std::string target ): AForm("Presidential Pardon Form", 25, 5), _target(target)
 {
-	//WIP
 	std::cout << DARK_WHITE << "Pres. Form : Params Constructor" << RESET << std::endl;
 }
 
