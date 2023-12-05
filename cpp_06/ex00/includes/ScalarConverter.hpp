@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:33:00 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/11/28 16:56:31 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:15:24 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,19 @@
 
 #include "color.h"
 #include <iostream>
+#include <sstream>
+#include <string>
+# include <iomanip>
+# include <cmath>
+# include <limits.h>
+# include <float.h>
 
 class ScalarConverter
 {
+	private:
+
+		ScalarConverter( void );
+	
 	public:
 
 		~ScalarConverter( void );
@@ -25,18 +35,13 @@ class ScalarConverter
 	
 		ScalarConverter &operator=( const ScalarConverter &rhs );
 
-		static void	convert( std::string input );
+		static int	convert( std::string input );
 
-		static void	printChar( std::string str );
-		static void	printInt( std::string str );
-		static void	printFloat( std::string str );
-		static void	printDouble( std::string str );
+		static bool	isChar( std::string str );
+		static bool	isInt( std::string str );
+		// static void	printFloat( std::string str );
+		// static void	printDouble( std::string str );
 		
-	private:
-	
-		ScalarConverter( void );
-
-		// bool	_check
 };
 
 #endif
