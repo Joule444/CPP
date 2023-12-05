@@ -6,13 +6,27 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:32:26 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/05 16:41:09 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:22:06 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/ScalarConverter.hpp"
 
 /* Members Functions */
+
+bool	ScalarConverter::isFloat( std::string input )
+{
+	std::string	tmp = input;
+	int			i = 0;
+	
+	// Verifie si input est un float
+	if (tmp.substr(tmp.size() - 1) == "f" && tmp.find("."))
+	{
+		input = input.substr(0, input.size() - 1);
+	}
+	else
+		return (false);
+}
 
 bool	ScalarConverter::isChar( std::string input )
 {

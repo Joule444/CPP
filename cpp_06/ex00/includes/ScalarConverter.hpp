@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:33:00 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/05 15:15:24 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:18:36 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class ScalarConverter
 
 		static bool	isChar( std::string str );
 		static bool	isInt( std::string str );
-		// static void	printFloat( std::string str );
+		static bool	isFloat( std::string str );
 		// static void	printDouble( std::string str );
 		
 };
