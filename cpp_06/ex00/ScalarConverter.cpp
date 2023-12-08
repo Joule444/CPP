@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:32:26 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/08 15:57:27 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:37:43 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,27 @@ int	countPoints( std::string str )
 }
 
 /* Members Functions */
+
+bool	ScalarConverter::isLiteral( std::string input )
+{
+	if (input == "nan" || input == "-inf" || input == "+inf")
+	{
+		std::cout << "char : impossible" << std::endl;
+		std::cout << "int : impossible" << std::endl;
+		std::cout << "float : " << input << "f" << std::endl;
+		std::cout << "double : " << input << std::endl;
+		return (true);
+	}
+	if (input == "-inff" || input == "+inff")
+	{
+		std::cout << "char : impossible" << std::endl;
+		std::cout << "int : impossible" << std::endl;
+		std::cout << "float : " << input << std::endl;
+		std::cout << "double : " << input.substr(0, input.size() - 1) << std::endl;
+		return (true);
+	}
+	return (false);
+}
 
 bool	ScalarConverter::isDouble( std::string input )
 {
@@ -57,7 +78,7 @@ bool	ScalarConverter::isDouble( std::string input )
 			std::cout << "char : impossible" << std::endl;
 		
 		// Display int
-		if (static_cast<int>(i) > INT_MAX || static_cast<int>(i) < INT_MIN)
+		if (static_cast<long int>(i) > INT_MAX || static_cast<long int>(i) < INT_MIN)
 			std::cout << "int : impossible" << std::endl;
 		else
 			std::cout << "int : " << static_cast<int>(i) << std::endl;
@@ -72,7 +93,7 @@ bool	ScalarConverter::isDouble( std::string input )
 	}
 	else if ((i < DBL_MAX || i > DBL_MIN) && input.find_first_not_of("0123456789.") == std::string::npos && countPoints(input) == 1)
 	{
-		std::cout << "overflow" << std::endl;
+		std::cout << "double overflow" << std::endl;
 		return (true);
 	}
 	else
@@ -111,7 +132,7 @@ bool	ScalarConverter::isFloat( std::string input )
 			std::cout << "char : impossible" << std::endl;
 		
 		// Display int
-		if (static_cast<int>(i) > INT_MAX || static_cast<int>(i) < INT_MIN)
+		if (static_cast<long int>(i) > INT_MAX || static_cast<long int>(i) < INT_MIN)
 			std::cout << "int : impossible" << std::endl;
 		else
 			std::cout << "int : " << static_cast<int>(i) << std::endl;
@@ -124,9 +145,9 @@ bool	ScalarConverter::isFloat( std::string input )
 
 		return (true);
 	}
-	else if ((i < FLT_MAX || i > -FLT_MAX) && input.find_first_not_of("0123456789.") == std::string::npos && countPoints(input) == 1)
+	else if ((i < FLT_MAX || i > FLT_MIN) && input.find_first_not_of("0123456789.") == std::string::npos && countPoints(input) == 1)
 	{
-		std::cout << "overflow" << std::endl;
+		std::cout << "float overflow" << std::endl;
 		return (true);
 	}
 	else
@@ -194,7 +215,7 @@ bool	ScalarConverter::isInt( std::string input )
 	}
 	else if ((i >= 2147483647 || i <= -2147483648) && input.find(".") == std::string::npos)
 	{
-		std::cout << "overflow" << std::endl;
+		std::cout << "int overflow" << std::endl;
 		return (true);
 	}
 	else
@@ -203,6 +224,8 @@ bool	ScalarConverter::isInt( std::string input )
 
 int ScalarConverter::convert( std::string input )
 {
+	if (isLiteral(input))
+		return (0);
 	if (isChar(input))
 		return (0);
 	if (isInt(input))
@@ -211,7 +234,8 @@ int ScalarConverter::convert( std::string input )
 		return (0);
 	if (isDouble(input))
 		return (0);
-	return (0);
+	std::cout << "Uknown type !" << std::endl;
+	return (1);
 }
 
 /* Overload Operators */
