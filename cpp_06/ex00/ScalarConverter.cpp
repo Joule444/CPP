@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:32:26 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/08 15:29:38 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/08 15:57:27 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,59 @@ int	countPoints( std::string str )
 
 /* Members Functions */
 
+bool	ScalarConverter::isDouble( std::string input )
+{
+	std::string	tmp = input;
+	int			dec = 0;
+	
+	// Verifie si input est un double
+	if (tmp.find(".") != std::string::npos)
+	{
+		dec = input.substr(input.find(".")).size() - 1;
+		if (dec > 6)
+			dec = 6;
+	}
+	else
+		return (false);
+
+	std::istringstream	iss(input);
+	double				i;
+
+	if (iss >> i && iss.eof())
+	{
+		std::cout << "It's a " << RED << "double" << RESET << " !" << std::endl;
+		
+		// Display char
+		if (static_cast<int>(i) > 31 && static_cast<int>(i) < 127)
+			std::cout << "char : " << static_cast<char>(i) << std::endl;
+		else if ((static_cast<int>(i) > -1 && static_cast<int>(i) < 32) || static_cast<int>(i) == 127) 
+			std::cout << "char : non displayable" << std::endl;
+		else
+			std::cout << "char : impossible" << std::endl;
+		
+		// Display int
+		if (static_cast<int>(i) > INT_MAX || static_cast<int>(i) < INT_MIN)
+			std::cout << "int : impossible" << std::endl;
+		else
+			std::cout << "int : " << static_cast<int>(i) << std::endl;
+		
+		// Display float
+		std::cout << "float : " << std::fixed << std::setprecision(dec) << static_cast<float>(i) << "f" << std::endl;
+		
+		// Display double
+		std::cout << "double : " << std::fixed << std::setprecision(dec) << i << std::endl;
+
+		return (true);
+	}
+	else if ((i < DBL_MAX || i > DBL_MIN) && input.find_first_not_of("0123456789.") == std::string::npos && countPoints(input) == 1)
+	{
+		std::cout << "overflow" << std::endl;
+		return (true);
+	}
+	else
+		return (false);
+}
+
 bool	ScalarConverter::isFloat( std::string input )
 {
 	std::string	tmp = input;
@@ -35,7 +88,7 @@ bool	ScalarConverter::isFloat( std::string input )
 	if (tmp.substr(tmp.size() - 1) == "f" && tmp.find(".") != std::string::npos)
 	{
 		input = input.substr(0, input.size() - 1);
-		dec = input.substr(input.find(".")).size();
+		dec = input.substr(input.find(".")).size() - 1;
 		if (dec > 6)
 			dec = 6;
 	}
@@ -47,6 +100,8 @@ bool	ScalarConverter::isFloat( std::string input )
 	
 	if (iss >> i && iss.eof())
 	{
+		std::cout << "It's a " << CYAN << "float" << RESET << " !" << std::endl;
+		
 		// Display char
 		if (static_cast<int>(i) > 31 && static_cast<int>(i) < 127)
 			std::cout << "char : " << static_cast<char>(i) << std::endl;
@@ -85,6 +140,8 @@ bool	ScalarConverter::isChar( std::string input )
 
 	if (!(iss >> i && iss.eof()) && input.length() == 1)
 	{
+		std::cout << "It's a " << YELLOW << "char" << RESET << " !" << std::endl;
+
 		char	c;
 		std::istringstream	oss(input);
 		oss >> c;
@@ -112,8 +169,10 @@ bool	ScalarConverter::isInt( std::string input )
 	std::istringstream	iss(input);
 	int					i;
 
-	if (iss >> i)
+	if (iss >> i && iss.eof())
 	{
+		std::cout << "It's a " << GREEN << "int" << RESET << " !" << std::endl;
+		
 		// Display char
 		if (static_cast<int>(i) > 31 && static_cast<int>(i) < 127)
 			std::cout << "char : " << static_cast<char>(i) << std::endl;
@@ -133,7 +192,7 @@ bool	ScalarConverter::isInt( std::string input )
 		
 		return (true);
 	}
-	else if ((i >= 2147483647 || i <= -2147483648))
+	else if ((i >= 2147483647 || i <= -2147483648) && input.find(".") == std::string::npos)
 	{
 		std::cout << "overflow" << std::endl;
 		return (true);
@@ -147,6 +206,10 @@ int ScalarConverter::convert( std::string input )
 	if (isChar(input))
 		return (0);
 	if (isInt(input))
+		return (0);
+	if (isFloat(input))
+		return (0);
+	if (isDouble(input))
 		return (0);
 	return (0);
 }
