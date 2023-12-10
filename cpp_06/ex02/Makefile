@@ -6,7 +6,7 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/12/08 20:07:10 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/12/10 16:38:00 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = identify
 
 SRCS_DIR	= ./
-SRCS 		= 	main.cp
+SRCS 		= 	main.cpp Base.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS_DIR 	= 	objects/

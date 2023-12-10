@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 15:51:41 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/10 16:47:32 by jthuysba         ###   ########.fr       */
+/*   Created: 2023/12/10 15:56:53 by jthuysba          #+#    #+#             */
+/*   Updated: 2023/12/10 16:38:38 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Base.hpp"
+#ifndef BASE_HPP
+	#define BASE_HPP
 
-int	main( void )
+#include <iostream>
+#include <stdlib.h>
+#include "color.h"
+
+class Base
 {
-	Base	*foo = Base::generate();
-	
-	Base::identify(foo);
-	Base::identify(*foo);
-	
-	delete (foo);
-	
-	return (0);
-}
+	public:
+
+		virtual ~Base( void );
+
+		static Base* generate( void );
+		static void	identify( Base* p );
+		static void	identify( Base& p );
+
+};
+
+#endif

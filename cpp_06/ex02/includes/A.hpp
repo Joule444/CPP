@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 15:51:41 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/10 16:47:32 by jthuysba         ###   ########.fr       */
+/*   Created: 2023/12/10 15:59:31 by jthuysba          #+#    #+#             */
+/*   Updated: 2023/12/10 16:02:10 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Base.hpp"
+#ifndef A_HPP
+	#define A_HPP
 
-int	main( void )
+#include "Base.hpp"
+
+class A : public Base
 {
-	Base	*foo = Base::generate();
-	
-	Base::identify(foo);
-	Base::identify(*foo);
-	
-	delete (foo);
-	
-	return (0);
-}
+};
+
+#endif
