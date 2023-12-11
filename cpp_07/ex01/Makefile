@@ -6,12 +6,12 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/12/11 12:26:43 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/12/11 14:40:18 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = template
+NAME = iter
 
 SRCS_DIR	= ./
 SRCS 		= 	main.cpp
