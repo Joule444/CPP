@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:44:24 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/11 15:43:43 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:55:52 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Array
 template < typename T >
 size_t	Array<T>::size( void ) const
 {
-	return (this->size);
+	return (this->_size);
 }
 
 /* Operators Overloads */
@@ -52,7 +52,11 @@ size_t	Array<T>::size( void ) const
 template < typename T >
 T & Array<T>::operator[]( unsigned int index ) const
 {
-	
+	if (index >= this->size())
+	{
+		throw (std::exception());
+	}
+	return (this->_arr[index]);
 }
 
 template < typename T >
@@ -85,6 +89,8 @@ Array<T>::Array( const Array<T> & copy ): _size(copy._size)
 template < typename T >
 Array<T>::~Array( void )
 {
+	if (this->_arr)
+		delete[] this->_arr;
 	std::cout << DARK_WHITE << "Array : Destructor Called" << END;
 }
 
