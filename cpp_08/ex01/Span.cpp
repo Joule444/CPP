@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:54:13 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/15 15:30:28 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:23:39 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,15 @@ unsigned int	Span::shortestSpan( void )
 		next++;
 	}
 	return (span);
+}
+
+void	Span::addRange( std::list<int>::iterator start, std::list<int>::iterator end )
+{
+	size_t	rangeSize = std::distance(start, end);
+	if (_span.size() + rangeSize > _n)
+		throw (Span::TooManyNumbers());
+	_span.insert(_span.end(), start, end);
+	_span.sort();
 }
 
 void	Span::addNumber( int nb )

@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:49:29 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/15 15:29:30 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:59:24 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ class	Span
 
 		Span & operator=( const Span & rhs );
 				
-		void	addNumber( int nb );
+		void				addNumber( int nb );
+		void				addRange( std::list<int>::iterator start, std::list<int>::iterator end );
 		unsigned int	shortestSpan( void );
-		unsigned int	longestSpan( void );		
+		unsigned int	longestSpan( void );
 	
 	class TooManyNumbers : public std::exception
 	{
