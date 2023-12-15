@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:49:29 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/14 16:33:38 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:29:30 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@
 
 class	Span
 {
+	private :
+	
+		unsigned int 	_n;
+		std::list<int>	_span;
+	
 	public :
 			
 		Span( void );
@@ -34,12 +39,26 @@ class	Span
 		void	addNumber( int nb );
 		unsigned int	shortestSpan( void );
 		unsigned int	longestSpan( void );		
-		
-	private :
 	
-		unsigned int 	_n;
-		std::list<int>	_span;
-		
+	class TooManyNumbers : public std::exception
+	{
+		public :
+
+			virtual const char* what() const throw()
+			{
+				return ("Too many numbers");
+			}
+	};
+
+	class NotEnoughNumbers : public std::exception
+	{
+		public :
+
+			virtual const char* what() const throw()
+			{
+				return ("Not enough numbers");
+			}
+	};
 };
 	
 #endif

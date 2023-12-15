@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:54:13 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/14 16:44:59 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:30:28 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 unsigned int	Span::longestSpan( void )
 {
 	if (_span.size() <= 1)
-		throw (std::exception());
+		throw (Span::NotEnoughNumbers());
 	return (_span.back() - _span.front());
 }
 
 unsigned int	Span::shortestSpan( void )
 {
 	if (_span.size() <= 1)
-		throw (std::exception());
+		throw (Span::NotEnoughNumbers());
 	
 	std::list<int>::iterator	it;
 	std::list<int>::iterator	next;
@@ -47,7 +47,7 @@ unsigned int	Span::shortestSpan( void )
 void	Span::addNumber( int nb )
 {
 	if (this->_span.size() >= this->_n)
-		throw (std::exception());
+		throw (Span::TooManyNumbers());
 	this->_span.push_back(nb);
 	this->_span.sort();
 }
