@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 22:44:01 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/18 23:28:55 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/18 23:29:48 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ BitcoinExchange::BitcoinExchange( std::string filename )
 			std::cerr << DARK_RED << "Error : Wrong line format" << END;
 	}
 	file.close();
-
-	std::cout << _db["2022-03-29"] << END;
 }
 
 BitcoinExchange::BitcoinExchange( void )
