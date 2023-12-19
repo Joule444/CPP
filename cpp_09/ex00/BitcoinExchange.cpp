@@ -6,11 +6,22 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 22:44:01 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/18 23:29:48 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:03:23 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/BitcoinExchange.hpp"
+
+/* Members Functions */
+
+float	BitcoinExchange::getPrice( std::string date ) const
+{
+	return (this->_db.lower_bound(date)->second);
+}
+
+/* Operators Overload */
+
+//WIP
 
 /* Constr & Destr */
 
@@ -39,7 +50,7 @@ BitcoinExchange::BitcoinExchange( std::string filename )
 		std::istringstream	ss(line);
 		std::string				date;
 		std::string				xrate;
-		double					num;
+		float					num;
 
 		if (line == "date,exchange_rate")
 			continue;

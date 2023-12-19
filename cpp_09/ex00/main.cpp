@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:48 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/19 17:28:07 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:04:18 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main ( int argc, char **argv )
 		return (1);
 	}
 	
-	BitcoinExchange	data("data.csv");
+	BitcoinExchange		data("data.csv");
 	std::ifstream		ifs(argv[1]);
 	if (!ifs)
 	{
@@ -104,18 +104,21 @@ int	main ( int argc, char **argv )
 			if (!checkDate(date))
 			{
 				std::cerr << DARK_RED << "Error : Invalid date : " << date << END;
-				// return (1);
+				return (1);
 			}
 			if (!checkValue(value))
 			{
 				std::cerr << DARK_RED << "Error : Invalid value : " << value << END;
-				// return (false);
+				return (false);
 			}
-						
-			// check date & num validity
+			
+			std::cout << date << " => " << value << " = " << data.getPrice(date) * value << std::endl;
 		}
 		else
+		{
 			std::cerr << DARK_RED << "Error : Invalid line : " << line << END;
+			return (1);
+		}
 	}
 	
 	return (0);
