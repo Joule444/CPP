@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 15:07:22 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/11 16:01:15 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:25:26 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main( void )
 		size_t	len = 10;
 		Array<int>	arr(len);
 
+		arr[1] = 42;
 		for (size_t i = 0; i < len; i++)
 		{
 			std::cout << "[" << CYAN << arr[i] << RESET << "]" << std::endl;
@@ -34,6 +35,7 @@ int	main( void )
 		size_t	len = 10;
 		Array<char>	arr(len);
 
+		arr[1] = 'a';
 		for (size_t i = 0; i < len; i++)
 		{
 			std::cout << "[" << CYAN << arr[i] << RESET << "]" << std::endl;
