@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:48 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/19 16:28:25 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 17:18:23 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,13 @@ bool	checkDate( std::string date )
 		else
 			return (false);
 	}
+	return (false);
+}
+
+bool	checkNum( int num )
+{
+	(void) num;
+	return (true);
 }
 
 int	main ( int argc, char **argv )
@@ -96,7 +103,12 @@ int	main ( int argc, char **argv )
 			if (!checkDate(date))
 			{
 				std::cerr << DARK_RED << "Error : Invalid date : " << date << END;
-				return (1);
+				// return (1);
+			}
+			if (!checkNum(num))
+			{
+				std::cerr << DARK_RED << "Error : Invalid value : " << num << END;
+				// return (false);
 			}
 						
 			// check date & num validity
