@@ -6,11 +6,62 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:48 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/19 00:23:50 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 16:28:25 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/BitcoinExchange.hpp"
+
+bool	isLeapYear( int year )
+{
+	if (year % 4 == 0)
+	{
+		if (year % 100 == 0)
+		{
+			if (year % 400 == 0)
+				return (true);
+			else
+				return (false);
+		}
+		else
+			return (true);
+	}
+	else
+		return (false);
+}
+
+bool	checkDate( std::string date )
+{
+	std::istringstream	ss(date);
+	int	day, month, year;
+	
+	if (ss >> year && ss.get() == '-' && ss >> month && ss.get() == '-' && ss >> day && ss.eof())
+	{
+		if (month >= 1 && month <= 12)
+		{
+			if (month == 2)
+			{
+				if (!(day >= 1 && day <= (isLeapYear(year) ? 29 : 28)))
+					return (false);
+				return (true);
+			}
+			else if ((month <= 7 && month % 2 != 0) || (month >= 8 && month % 2 == 0))
+			{
+				if (!(day >= 1 && day <= 31))
+					return (false);
+				return (true);
+			}
+			else
+			{
+				if (!(day >= 1 && day <= 30))
+					return (false);
+				return (true);
+			}
+		}
+		else
+			return (false);
+	}
+}
 
 int	main ( int argc, char **argv )
 {
@@ -42,6 +93,12 @@ int	main ( int argc, char **argv )
 		{
 			date.erase(10, 1); // Supprime l'espace
 			
+			if (!checkDate(date))
+			{
+				std::cerr << DARK_RED << "Error : Invalid date : " << date << END;
+				return (1);
+			}
+						
 			// check date & num validity
 		}
 		else
