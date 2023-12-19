@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:22:46 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/11 14:39:16 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:12:00 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	main( void )
 
 	std::cout << BOLD_YELLOW << "TEST AVEC CHAR" << RESET << std::endl;
 	
-	char		arr1[] = {'a', 'b', 'c', 'd'};
-	size_t	size1 = 4;
+	char		arr1[] = "hello";
+	size_t	size1 = 5;
 	
 	iter<char>(arr1, size1, printElem);
 
