@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:12:25 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/10 16:47:01 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 13:01:22 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 /* Members Functions */
 
-void	Base::identify( Base& p )
+void	Base::identify( Base & p )
 {
 	try
 	{
@@ -45,7 +45,7 @@ void	Base::identify( Base& p )
 	}
 }
 
-void	Base::identify( Base* p )
+void	Base::identify( Base * p )
 {
 	if (dynamic_cast<A *>(p))
 		std::cout << "Type is " << RED << "A" << RESET  << " !" << std::endl;
