@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:48 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/19 17:18:23 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 17:28:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,10 @@ bool	checkDate( std::string date )
 	return (false);
 }
 
-bool	checkNum( int num )
+bool	checkValue( float value )
 {
-	(void) num;
+	if (value < 0 || value >= 2147483648)
+		return (false);
 	return (true);
 }
 
@@ -92,11 +93,11 @@ int	main ( int argc, char **argv )
 	{
 		std::istringstream	ss(line);
 		std::string				date;
-		double					num;
+		float					value;
 		
 		if (line == "date | value")
 			continue;
-		else if (std::getline(ss, date, '|') && ss >> num)
+		else if (std::getline(ss, date, '|') && ss >> value)
 		{
 			date.erase(10, 1); // Supprime l'espace
 			
@@ -105,9 +106,9 @@ int	main ( int argc, char **argv )
 				std::cerr << DARK_RED << "Error : Invalid date : " << date << END;
 				// return (1);
 			}
-			if (!checkNum(num))
+			if (!checkValue(value))
 			{
-				std::cerr << DARK_RED << "Error : Invalid value : " << num << END;
+				std::cerr << DARK_RED << "Error : Invalid value : " << value << END;
 				// return (false);
 			}
 						
