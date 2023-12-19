@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:32:26 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/19 12:28:04 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/19 12:54:44 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ bool	ScalarConverter::isDouble( std::string input )
 
 	if (iss >> i && iss.eof())
 	{
-		// std::cout << "It's a " << RED << "double" << RESET << " !" << std::endl;
+		std::cout << "It's a " << RED << "double" << RESET << " !" << std::endl;
 		
 		// Display char
 		if (static_cast<int>(i) > 31 && static_cast<int>(i) < 127)
@@ -125,7 +125,7 @@ bool	ScalarConverter::isFloat( std::string input )
 	
 	if (iss >> i && iss.eof())
 	{
-		// std::cout << "It's a " << CYAN << "float" << RESET << " !" << std::endl;
+		std::cout << "It's a " << CYAN << "float" << RESET << " !" << std::endl;
 		
 		// Display char
 		if (static_cast<int>(i) > 31 && static_cast<int>(i) < 127)
@@ -165,7 +165,7 @@ bool	ScalarConverter::isChar( std::string input )
 
 	if (!(iss >> i && iss.eof()) && input.length() == 1)
 	{
-		// std::cout << "It's a " << YELLOW << "char" << RESET << " !" << std::endl;
+		std::cout << "It's a " << YELLOW << "char" << RESET << " !" << std::endl;
 
 		char	c;
 		std::istringstream	oss(input);
@@ -196,7 +196,7 @@ bool	ScalarConverter::isInt( std::string input )
 
 	if (iss >> i && iss.eof())
 	{
-		// std::cout << "It's a " << GREEN << "int" << RESET << " !" << std::endl;
+		std::cout << "It's a " << GREEN << "int" << RESET << " !" << std::endl;
 		
 		// Display char
 		if (static_cast<int>(i) > 31 && static_cast<int>(i) < 127)
@@ -223,11 +223,18 @@ bool	ScalarConverter::isInt( std::string input )
 		return (true);
 	}
 	else
+	{
 		return (false);
+	}
 }
 
 int ScalarConverter::convert( std::string input )
 {
+	if (input == "")
+	{
+		std::cout << "Empty string !" << std::endl;
+		return (1);
+	}
 	if (isLiteral(input))
 		return (0);
 	if (isChar(input))
