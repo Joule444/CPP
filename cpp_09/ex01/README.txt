@@ -48,4 +48,10 @@ puis on applique le signe sur la stack
 
 ./RPN "3 4 + 1 2 3 + - *"
 
-=> [4][3]+	=> [3][2][1][7]+ => [3][2][8]- => [3][6]* => [18]		
+=> [4][3]+	=> [3][2][1][7]+ => [3][2][8]- => [3][6]* => [18]
+
+=> Constructor string -> set _expression
+
+=> void parseExpr( void ) => parsing throw exception si error
+
+=> int	doRPN( void ) => fonction principale return le result

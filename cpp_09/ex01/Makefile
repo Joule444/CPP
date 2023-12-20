@@ -6,7 +6,7 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/12/20 15:03:46 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/12/20 15:58:01 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = RPN
 
 SRCS_DIR	= ./
-SRCS 		= 	main.cpp
+SRCS 		= 	main.cpp RPN.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS_DIR 	= 	objects/

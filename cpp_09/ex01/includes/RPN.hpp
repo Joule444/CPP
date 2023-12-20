@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:19:27 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 15:41:16 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 16:34:02 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <stack>
+#include <sstream>
+#include <cctype>
 
 #include "color.h"
 
@@ -22,15 +24,21 @@ class RPN
 {
 	private:
 
+		RPN( void );
+		
 		std::stack<int> _stack;
+		std::string		_expression;
 
 	public:
 	
-		RPN( void );
 		~RPN( void );
 		RPN( const RPN & copy );
+		RPN( std::string expression );
 
 		RPN & operator=( const RPN & assign );
+
+		void	parseExpr( void ) const;
+		int		doRPN( void ) const;
 };
 
 #endif
