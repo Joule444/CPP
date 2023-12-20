@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:27:43 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/11 12:36:31 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 09:18:27 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 template< typename T >
 T const & max( T const & a, T const & b )
 {
-	return (a >= b ? a : b);
+	return (a > b ? a : b);
 }
 
 template< typename T >
 T const & min( T const & a, T const & b )
 {
-	return (a <= b ? a : b);
+	return (a < b ? a : b);
 }
 
 template< typename T >
