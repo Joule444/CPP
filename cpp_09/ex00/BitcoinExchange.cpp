@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 22:44:01 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/19 18:03:23 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:03:38 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ float	BitcoinExchange::getPrice( std::string date ) const
 
 /* Operators Overload */
 
-//WIP
+BitcoinExchange & BitcoinExchange::operator=( const BitcoinExchange & assign )
+{
+	this->_db = assign._db;
+	std::cout << DARK_WHITE << "BitcoinExchange : Assign Operator" << END;
+	return (*this);
+}
 
 /* Constr & Destr */
 
@@ -30,15 +35,15 @@ BitcoinExchange::~BitcoinExchange( void )
 	std::cout << DARK_WHITE << "BitcoinExchange : Destructor" << END;
 }
 
-BitcoinExchange::BitcoinExchange( const BitcoinExchange & copy )
+BitcoinExchange::BitcoinExchange( const BitcoinExchange & copy ): _db(copy._db)
 {
-	//WIP
-	(void) copy;
 	std::cout << DARK_WHITE << "BitcoinExchange : Copy Constructor" << END;
 }
 
 BitcoinExchange::BitcoinExchange( std::string filename )
 {
+	std::cout << DARK_WHITE << "BitcoinExchange : Args Constructor" << END;
+	
 	std::ifstream	file(filename.c_str());
 	
 	if (!file.is_open())
@@ -64,4 +69,5 @@ BitcoinExchange::BitcoinExchange( std::string filename )
 
 BitcoinExchange::BitcoinExchange( void )
 {
+	std::cout << DARK_WHITE << "BitcoinExchange : Default Constructor" << END;
 }
