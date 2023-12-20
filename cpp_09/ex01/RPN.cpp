@@ -6,11 +6,18 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:33:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 16:43:09 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 16:50:54 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/RPN.hpp"
+
+/* Exceptions */
+
+const char * RPN::BadArgsException::what() const throw()
+{
+	return ("Bad arguments");
+}
 
 /* Members Functions */
 
@@ -20,7 +27,7 @@ void	RPN::parseExpr( void ) const
 	int	nb;
 	
 	if (!((iss >> nb && nb >= 0 && nb <= 9) && (iss >> nb && nb >= 0 && nb <= 9)))
-		throw (std::exception());
+		throw (RPN::BadArgsException());
 	
 	int	countNum = 2;
 	int	countOp = 0;
@@ -30,9 +37,9 @@ void	RPN::parseExpr( void ) const
 	while (iss >> word)
 	{
 		if (word.length() != 1)
-			throw (std::exception());
+			throw (RPN::BadArgsException());
 		if (!(std::isdigit(word[0])) && opBase.find(word[0]) == std::string::npos)
-			throw (std::exception());
+			throw (RPN::BadArgsException());
 
 		if (std::isdigit(word[0]))
 			countNum++;
@@ -41,9 +48,7 @@ void	RPN::parseExpr( void ) const
 	}
 
 	if (countNum != countOp + 1)
-		throw (std::exception());
-		
-	std::cout << GREEN << "Good !" << END;
+		throw (RPN::BadArgsException());
 }
 
 /* Operators Overload */

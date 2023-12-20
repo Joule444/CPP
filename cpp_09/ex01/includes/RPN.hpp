@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:19:27 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 16:34:02 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 16:49:34 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ class RPN
 
 		void	parseExpr( void ) const;
 		int		doRPN( void ) const;
+
+		class BadArgsException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #endif
