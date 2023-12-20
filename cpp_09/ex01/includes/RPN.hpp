@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:19:27 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 15:34:10 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:41:16 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RPN
 		~RPN( void );
 		RPN( const RPN & copy );
 
-		RPN & operator = ( const RPN & assign );
+		RPN & operator=( const RPN & assign );
 };
 
 #endif
