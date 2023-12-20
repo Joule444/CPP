@@ -6,11 +6,22 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:33:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 16:50:54 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 17:36:10 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/RPN.hpp"
+
+/* Tools Functions */
+
+bool	isOperand( char c )
+{
+	std::string	operand = "+-*/";
+	
+	if (operand.find(c) == std::string::npos)
+		return (false);
+	return (true);
+}
 
 /* Exceptions */
 
@@ -21,6 +32,45 @@ const char * RPN::BadArgsException::what() const throw()
 
 /* Members Functions */
 
+void	RPN::printStack( void ) const
+{
+    std::cout << "Stack Content : ";
+    
+    // Crée une copie temporaire de la pile pour éviter de la modifier
+    std::stack<int> tempStack = _stack;
+
+    // Affiche les éléments de la pile jusqu'à ce qu'elle soit vide
+    while (!tempStack.empty())
+    {
+        std::cout << "[" << tempStack.top() << "] ";
+        tempStack.pop();
+    }
+
+    std::cout << std::endl;
+}
+
+int	RPN::doRPN( void )
+{
+	std::istringstream	iss(_expression);
+	std::string			word;
+
+	while (iss >> word)
+	{
+		if (std::isdigit(word[0]))
+		{
+			int	nb = word[0] - '0';
+			this->_stack.push(nb);
+		}
+		// if (isOperand(word[0]))
+		// {
+		// 	_stack.
+		// }
+	}
+	this->printStack();
+
+	return (0);
+}
+
 void	RPN::parseExpr( void ) const
 {
 	std::istringstream	iss(_expression);
@@ -29,21 +79,19 @@ void	RPN::parseExpr( void ) const
 	if (!((iss >> nb && nb >= 0 && nb <= 9) && (iss >> nb && nb >= 0 && nb <= 9)))
 		throw (RPN::BadArgsException());
 	
-	int	countNum = 2;
-	int	countOp = 0;
-	std::string	opBase = "+-*/";
+	int	countNum = 2, countOp = 0;
 	std::string	word;
 	
 	while (iss >> word)
 	{
 		if (word.length() != 1)
 			throw (RPN::BadArgsException());
-		if (!(std::isdigit(word[0])) && opBase.find(word[0]) == std::string::npos)
+		if (!(std::isdigit(word[0])) && !isOperand(word[0]))
 			throw (RPN::BadArgsException());
 
 		if (std::isdigit(word[0]))
 			countNum++;
-		else if (opBase.find(word[0]) != std::string::npos)
+		else if (isOperand(word[0]))
 			countOp++;
 	}
 

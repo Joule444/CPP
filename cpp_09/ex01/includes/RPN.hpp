@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:19:27 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 16:49:34 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 17:29:57 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ class RPN
 		RPN & operator=( const RPN & assign );
 
 		void	parseExpr( void ) const;
-		int		doRPN( void ) const;
+		int		doRPN( void );
+		void	printStack( void ) const;
 
 		class BadArgsException: public std::exception
 		{

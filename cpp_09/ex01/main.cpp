@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:43:43 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 16:50:39 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 17:33:37 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,15 @@ int	main( int argc, char **argv )
 	try
 	{
 		data.parseExpr();
+	}
+	catch (const std::exception & e)
+	{
+		std::cerr << DARK_RED << "Error : " << e.what() << END;
+	}
+
+	try
+	{
+		data.doRPN();
 	}
 	catch (const std::exception & e)
 	{
