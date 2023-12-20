@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:33:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 17:36:10 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 20:30:13 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,14 @@ const char * RPN::BadArgsException::what() const throw()
 
 void	RPN::printStack( void ) const
 {
-    std::cout << "Stack Content : ";
-    
-    // Crée une copie temporaire de la pile pour éviter de la modifier
+    std::cout << "STACK CONTENT : ";
     std::stack<int> tempStack = _stack;
 
-    // Affiche les éléments de la pile jusqu'à ce qu'elle soit vide
     while (!tempStack.empty())
     {
-        std::cout << "[" << tempStack.top() << "] ";
+        std::cout << "[" << CYAN << tempStack.top() << RESET << "] ";
         tempStack.pop();
     }
-
     std::cout << std::endl;
 }
 
@@ -61,14 +57,37 @@ int	RPN::doRPN( void )
 			int	nb = word[0] - '0';
 			this->_stack.push(nb);
 		}
-		// if (isOperand(word[0]))
-		// {
-		// 	_stack.
-		// }
+		else if (isOperand(word[0]))
+		{
+			int	b = _stack.top();
+			_stack.pop();
+			int	a = _stack.top();
+			_stack.pop();
+			
+			int result;
+			switch (word[0])
+			{
+				case '+':
+					result = a + b;
+					break;
+				case '-':
+					result = a - b;
+					break;
+				case '*':
+					result = a * b;
+					break;
+				case '/':
+					if (b == 0)
+						throw (std::exception());
+					result = a / b;
+					break;
+				default:
+					throw (std::exception());
+			}
+			_stack.push(result);
+		}
 	}
-	this->printStack();
-
-	return (0);
+	return (_stack.top());
 }
 
 void	RPN::parseExpr( void ) const

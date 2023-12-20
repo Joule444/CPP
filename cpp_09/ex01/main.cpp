@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:43:43 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 17:33:37 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 20:23:59 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,17 @@ int	main( int argc, char **argv )
 	catch (const std::exception & e)
 	{
 		std::cerr << DARK_RED << "Error : " << e.what() << END;
+		return (1);
 	}
 
 	try
 	{
-		data.doRPN();
+		std::cout << data.doRPN() << std::endl;
 	}
 	catch (const std::exception & e)
 	{
 		std::cerr << DARK_RED << "Error : " << e.what() << END;
+		return (1);
 	}
 	
 	return (0);
