@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 22:44:01 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 12:03:38 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:25:19 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@
 
 float	BitcoinExchange::getPrice( std::string date ) const
 {
-	return (this->_db.lower_bound(date)->second);
+	std::map<std::string, float>::const_iterator	it;
+	
+	it = _db.lower_bound(date);
+	if (date != it->first || it == _db.end())
+		it--;
+	return (it->second);
 }
 
 /* Operators Overload */

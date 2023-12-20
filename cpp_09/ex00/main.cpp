@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:55:48 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/19 18:04:18 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:42:05 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ bool	checkDate( std::string date )
 	std::istringstream	ss(date);
 	int	day, month, year;
 	
+	
 	if (ss >> year && ss.get() == '-' && ss >> month && ss.get() == '-' && ss >> day && ss.eof())
 	{
+		if (year < 2009 || (year == 2009 && month == 01 && day < 02))
+			return (false);
 		if (month >= 1 && month <= 12)
 		{
 			if (month == 2)
@@ -104,20 +107,21 @@ int	main ( int argc, char **argv )
 			if (!checkDate(date))
 			{
 				std::cerr << DARK_RED << "Error : Invalid date : " << date << END;
-				return (1);
 			}
-			if (!checkValue(value))
+			else if (!checkValue(value))
 			{
 				std::cerr << DARK_RED << "Error : Invalid value : " << value << END;
-				return (false);
 			}
-			
-			std::cout << date << " => " << value << " = " << data.getPrice(date) * value << std::endl;
+			else
+			{
+				std::cout << "[" << date << "]" << " => " << value << " = "
+					<< CYAN << data.getPrice(date) * value << END;
+				
+			}
 		}
 		else
 		{
 			std::cerr << DARK_RED << "Error : Invalid line : " << line << END;
-			return (1);
 		}
 	}
 	

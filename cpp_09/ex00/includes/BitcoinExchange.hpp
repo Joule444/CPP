@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 22:31:25 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/19 17:56:18 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:45:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <iomanip>
 #include "color.h"
 	
 class BitcoinExchange
