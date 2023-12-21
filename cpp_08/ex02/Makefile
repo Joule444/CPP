@@ -6,12 +6,12 @@
 #    By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 11:31:53 by jthuysba          #+#    #+#              #
-#    Updated: 2023/12/21 13:00:51 by jthuysba         ###   ########.fr        #
+#    Updated: 2023/12/21 13:29:17 by jthuysba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = template
+NAME = mstack
 
 SRCS_DIR	= ./
 SRCS 		= 	main.cpp
