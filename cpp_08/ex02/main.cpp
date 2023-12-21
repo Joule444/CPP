@@ -5,31 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 22:11:14 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/15 22:20:22 by jthuysba         ###   ########.fr       */
+/*   Created: 2023/12/21 12:57:32 by jthuysba          #+#    #+#             */
+/*   Updated: 2023/12/21 13:00:18 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MUTANTSTACK_HPP
-	#define MUTANTSTACK_HPP
+#include "includes/MutantStack.hpp"
 
-#include <iostream>
-#include <stack>
-#include "color.h"
-
-template <typename T>
-class MutantStack : public std::stack<T>
+int main(void)
 {
-	public :
+	MutantStack<int> foo;
 
-		MutantStack<T>( void );
-		~MutantStack<T>( void );
-		MutantStack<T>( const MutantStack<T> & copy );
-
-		MutantStack<T> & operator=( const MutantStack<T> & assign );
-		
-		
-};
-
-
-#endif
+	std::cout << foo.size() << std::endl;
+	return (0);
+}
