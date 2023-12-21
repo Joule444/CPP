@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:49:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/21 19:14:26 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:32:34 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include <algorithm>
 
 #include "color.h"
+#include "templates.hpp"
 
 class PmergeMe
 {
