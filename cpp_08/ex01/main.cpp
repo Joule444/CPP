@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:48:06 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/15 16:30:44 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:47:38 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,19 @@ int main()
 
 		try
 		{
-			foo.addNumber(0);
-			std::cout << "Number added" << std::endl;
-			foo.addNumber(1);
-			std::cout << "Number added" << std::endl;
-			foo.addNumber(2);
-			std::cout << "Number added" << std::endl;
-			foo.addNumber(3);
-			std::cout << "Number added" << std::endl;
-			foo.addNumber(4);
-			std::cout << "Number added" << std::endl;
-			foo.addNumber(5);
-			std::cout << "Number added" << std::endl;
+			for (int i = 0; 1; i++)
+			{
+				foo.addNumber(i);
+				std::cout << i << DARK_GREEN << " added !" << END;
+			}	
 		}
 		catch (const std::exception & e)
 		{
 			std::cerr << DARK_RED << "Error : " << e.what() << END;
 		}
 
+		std::cout <<std::endl;
+		
 		try
 		{
 			unsigned int l = foo.longestSpan();
@@ -52,6 +47,27 @@ int main()
 	}
 
 	std::cout << std::endl;
+	
+	{
+		Span	foo = Span(1);
+		
+		int i = -42;
+		foo.addNumber(i);
+		std::cout << i << DARK_GREEN << " added !" << END;
+		
+		try
+		{
+			unsigned int l = foo.longestSpan();
+			std::cout << "Longest span is " << l << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << DARK_RED << "Error : " << e.what() << '\n';
+		}
+		
+	}
+
+	std::cout << std::endl;
 
 	{
 		Span	foo = Span(10000);
@@ -60,13 +76,12 @@ int main()
 		for (int i = 9999; i >= 0; i--)
 		{
 			lst.push_back(i);
-			// std::cout << i << " added" << std::endl;
 		}
 
 		try
 		{
 			foo.addRange(lst.begin(), lst.end());
-			std::cout << "Range added" << std::endl;
+			std::cout << "Range " << DARK_GREEN << "added" << END;
 			
 			unsigned int l = foo.longestSpan();
 			unsigned int s = foo.shortestSpan();

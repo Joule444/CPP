@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:54:13 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/15 16:23:39 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:35:19 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ unsigned int	Span::shortestSpan( void )
 	next = this->_span.begin();
 	next++;
 
-	unsigned	int	span = *next - *it;
+	int	span = *next - *it;
 	
 	for (; it != _span.end(); it++)
 	{
