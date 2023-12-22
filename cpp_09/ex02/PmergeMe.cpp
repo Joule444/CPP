@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:31 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/22 17:22:50 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:40:10 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,16 @@ void	PmergeMe::sortDeque( void )
 	std::cout << "Sorted : ";
 	printContainer(_sortedDeque);
 	std::cout << std::endl;
+
+	gettimeofday(&_endT, NULL);
+	long long timeSpan = (_endT.tv_sec - _startT.tv_sec) * 1000000LL + (_endT.tv_usec - _startT.tv_usec);
+	std::cout << "Time to sort using std::deque : " << timeSpan / 1000.0 << " us" << std::endl;
 }
 
 bool	PmergeMe::fillDeque( const int argc, const char **argv )
-{
+{	
+	gettimeofday(&_startT, NULL);
+	
 	if (argc < 2)
 		return (false);
 	

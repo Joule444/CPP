@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:49:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/22 16:59:31 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:37:34 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #include <deque>
 #include <vector>
 #include <algorithm>
+#include <time.h>
+#include <sys/time.h>
 
 #include "color.h"
 #include "templates.hpp"
@@ -32,6 +34,8 @@ class PmergeMe
 		std::deque<int>						_deque;
 		std::deque<std::pair<int, int> >	_dequePairs;
 		std::deque<int>						_sortedDeque;
+		timeval								_startT;
+		timeval								_endT;
 		
 		void	_pairDeque( void );
 		void	_binaryInsertDeque( void );
