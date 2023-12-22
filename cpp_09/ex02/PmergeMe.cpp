@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:31 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/22 18:16:45 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 18:18:20 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,7 @@ void	PmergeMe::sortVector( void )
 
 	_endT = clock();
 	double timeSpan = 1000000.0 * (_endT - _startT) / CLOCKS_PER_SEC;
-	std::cout << "Time to sort using std::deque : " << timeSpan << " ms" << std::endl;
+	std::cout << "Time to sort using std::vector : " << timeSpan << " ms" << std::endl;
 }
 
 bool	PmergeMe::fillVector( const int argc, const char **argv )
