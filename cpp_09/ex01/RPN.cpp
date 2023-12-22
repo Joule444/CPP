@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:33:16 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/20 20:30:13 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 18:32:59 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,11 @@ void	RPN::parseExpr( void ) const
 		if (std::isdigit(word[0]))
 			countNum++;
 		else if (isOperand(word[0]))
+		{
 			countOp++;
+			if (countNum <= countOp)
+				throw (RPN::BadArgsException());
+		}
 	}
 
 	if (countNum != countOp + 1)
