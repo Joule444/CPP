@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 19:31:30 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/21 19:32:19 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:17:22 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	printContainer( T & container )
 
 	for (; it != ite; ++it)
     {
-        std::cout << "[" << *it << "] ";
+        std::cout << *it << " ";
     }
 
     std::cout << std::endl;

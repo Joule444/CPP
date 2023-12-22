@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:49:36 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/22 14:46:38 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 16:59:31 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ class PmergeMe
 {
 	private:
 
-		std::vector<int>	_vector;
-		std::deque<int>		_deque;
+		std::vector<int>					_vector;
+		std::deque<int>						_deque;
 		std::deque<std::pair<int, int> >	_dequePairs;
+		std::deque<int>						_sortedDeque;
 		
 		void	_pairDeque( void );
+		void	_binaryInsertDeque( void );
 		std::deque<std::pair<int, int> >::iterator _findInsertion( std::pair<int, int> pair );
 
 	public:

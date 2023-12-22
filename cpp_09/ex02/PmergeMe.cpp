@@ -6,13 +6,36 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:31 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/22 15:13:43 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:22:50 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/PmergeMe.hpp"
 
 /* Tools Functions */
+
+template < typename T >
+typename T::iterator	binarySearch( T & container, int value )
+{
+	typename T::iterator it = container.begin();
+    typename T::iterator ite = container.end();
+
+    while (it < ite)
+    {
+        typename T::iterator mid = it + (std::distance(it, ite) / 2);
+
+        if (*mid < value)
+        {
+            it = mid + 1;
+        }
+        else
+        {
+            ite = mid;
+        }
+    }
+
+    return (it);
+}
 
 std::deque<std::pair<int, int> >::iterator	PmergeMe::_findInsertion( std::pair<int, int> pair )
 {
@@ -28,6 +51,27 @@ std::deque<std::pair<int, int> >::iterator	PmergeMe::_findInsertion( std::pair<i
 }
 
 /* Members Functions */
+
+void	PmergeMe::_binaryInsertDeque( void )
+{
+	std::deque<std::pair<int, int> >::iterator	it = _dequePairs.begin();
+	std::deque<std::pair<int, int> >::iterator	ite = _dequePairs.end();
+	
+	for (; it != ite; it++)
+	{
+		_sortedDeque.push_back((*it).first);
+	}
+
+	it = _dequePairs.begin();
+	ite = _dequePairs.end();
+
+	for (; it != ite; it++)
+	{
+		_sortedDeque.insert(binarySearch(_sortedDeque, (*it).second), (*it).second);
+	}
+	if (_deque.size() % 2 != 0)
+		_sortedDeque.insert(binarySearch(_sortedDeque, _deque.back()), _deque.back());
+}
 
 void	PmergeMe::_pairDeque( void )
 {
@@ -45,17 +89,18 @@ void	PmergeMe::_pairDeque( void )
 			i++;
 		}
 	}
-	for (size_t i = 0; i < _dequePairs.size(); i++)
-	{
-		std::cout  << CYAN << "[" << _dequePairs[i].first << "][" << _dequePairs[i].second << "] ";
-	}
 	std::cout << END;
 }
 
 void	PmergeMe::sortDeque( void )
 {
+	std::cout << "\nUnsorted : ";
+	printContainer(_deque);
 	_pairDeque();
-	// printContainer(_deque);
+	_binaryInsertDeque();
+	std::cout << "Sorted : ";
+	printContainer(_sortedDeque);
+	std::cout << std::endl;
 }
 
 bool	PmergeMe::fillDeque( const int argc, const char **argv )
@@ -79,9 +124,7 @@ bool	PmergeMe::fillDeque( const int argc, const char **argv )
 	{
 		return (false);
 	}
-	
-	std::cout << "Deque : ";
-	printContainer(_deque);
+
 	return (true);
 }
 
@@ -103,8 +146,6 @@ bool	PmergeMe::fillVector( const int argc, const char **argv )
 		_vector.push_back(value);
 	}
 	
-	std::cout << "Vector : ";
-	printContainer(_vector);
 	return (true);
 }
 
