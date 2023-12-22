@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:31 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/22 17:55:45 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 18:16:45 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,14 @@ void	PmergeMe::sortDeque( void )
 	printContainer(_sortedDeque);
 	std::cout << std::endl;
 
-	gettimeofday(&_endT, NULL);
-	long long timeSpan = (_endT.tv_sec - _startT.tv_sec) * 1000000LL + (_endT.tv_usec - _startT.tv_usec);
-	std::cout << "Time to sort using std::deque : " << timeSpan / 1000.0 << " us" << std::endl;
+	_endT = clock();
+	double timeSpan = 1000000.0 * (_endT - _startT) / CLOCKS_PER_SEC;
+	std::cout << "Time to sort using std::deque : " << timeSpan << " ms" << std::endl;
 }
 
 bool	PmergeMe::fillDeque( const int argc, const char **argv )
 {	
-	gettimeofday(&_startT, NULL);
+	_startT = clock();
 	
 	if (argc < 2)
 		return (false);
@@ -171,14 +171,14 @@ void	PmergeMe::sortVector( void )
 	// printContainer(_sortedDeque);
 	// std::cout << std::endl;
 
-	gettimeofday(&_endT, NULL);
-	long long timeSpan = (_endT.tv_sec - _startT.tv_sec) * 1000000LL + (_endT.tv_usec - _startT.tv_usec);
-	std::cout << "Time to sort using std::vector : " << timeSpan / 1000.0 << " us" << std::endl;
+	_endT = clock();
+	double timeSpan = 1000000.0 * (_endT - _startT) / CLOCKS_PER_SEC;
+	std::cout << "Time to sort using std::deque : " << timeSpan << " ms" << std::endl;
 }
 
 bool	PmergeMe::fillVector( const int argc, const char **argv )
 {
-	gettimeofday(&_startT, NULL);
+	_startT = clock();
 	
 	if (argc < 2)
 		return (false);
