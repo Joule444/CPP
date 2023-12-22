@@ -6,38 +6,15 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:31 by jthuysba          #+#    #+#             */
-/*   Updated: 2023/12/22 17:40:10 by jthuysba         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:55:45 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/PmergeMe.hpp"
 
-/* Tools Functions */
+/* Members Functions */
 
-template < typename T >
-typename T::iterator	binarySearch( T & container, int value )
-{
-	typename T::iterator it = container.begin();
-    typename T::iterator ite = container.end();
-
-    while (it < ite)
-    {
-        typename T::iterator mid = it + (std::distance(it, ite) / 2);
-
-        if (*mid < value)
-        {
-            it = mid + 1;
-        }
-        else
-        {
-            ite = mid;
-        }
-    }
-
-    return (it);
-}
-
-std::deque<std::pair<int, int> >::iterator	PmergeMe::_findInsertion( std::pair<int, int> pair )
+std::deque<std::pair<int, int> >::iterator	PmergeMe::_findInsertionDeque( std::pair<int, int> pair )
 {
 	std::deque<std::pair<int, int> >::iterator	it = _dequePairs.begin();
 	std::deque<std::pair<int, int> >::iterator	ite = _dequePairs.end();
@@ -49,8 +26,6 @@ std::deque<std::pair<int, int> >::iterator	PmergeMe::_findInsertion( std::pair<i
 	}
 	return (ite);
 }
-
-/* Members Functions */
 
 void	PmergeMe::_binaryInsertDeque( void )
 {
@@ -84,7 +59,7 @@ void	PmergeMe::_pairDeque( void )
 			pair.first = _deque[i] < _deque[i + 1] ? _deque[i] : _deque[i + 1];
 			pair.second = _deque[i] < _deque[i + 1] ? _deque[i + 1] : _deque[i];
 			
-			_dequePairs.insert(_findInsertion(pair), pair);
+			_dequePairs.insert(_findInsertionDeque(pair), pair);
 				
 			i++;
 		}
@@ -134,8 +109,77 @@ bool	PmergeMe::fillDeque( const int argc, const char **argv )
 	return (true);
 }
 
+void	PmergeMe::_binaryInsertVector( void )
+{
+	std::vector<std::pair<int, int> >::iterator	it = _vectorPairs.begin();
+	std::vector<std::pair<int, int> >::iterator	ite = _vectorPairs.end();
+	
+	for (; it != ite; it++)
+	{
+		_sortedVector.push_back((*it).first);
+	}
+
+	it = _vectorPairs.begin();
+	ite = _vectorPairs.end();
+
+	for (; it != ite; it++)
+	{
+		_sortedVector.insert(binarySearch(_sortedVector, (*it).second), (*it).second);
+	}
+	if (_vector.size() % 2 != 0)
+		_sortedVector.insert(binarySearch(_sortedVector, _vector.back()), _vector.back());
+}
+
+std::vector<std::pair<int, int> >::iterator	PmergeMe::_findInsertionVector( std::pair<int, int> pair )
+{
+	std::vector<std::pair<int, int> >::iterator	it = _vectorPairs.begin();
+	std::vector<std::pair<int, int> >::iterator	ite = _vectorPairs.end();
+
+	for (; it != ite; it++)
+	{
+		if ((*it).first > pair.first)
+			return (it);
+	}
+	return (ite);
+}
+
+void	PmergeMe::_pairVector( void )
+{
+	for (size_t i = 0; i < _vector.size(); i++)
+	{
+		if (i + 1 < _vector.size())
+		{
+			std::pair<int, int>	pair;
+		
+			pair.first = _vector[i] < _vector[i + 1] ? _vector[i] : _vector[i + 1];
+			pair.second = _vector[i] < _vector[i + 1] ? _vector[i + 1] : _vector[i];
+			
+			_vectorPairs.insert(_findInsertionVector(pair), pair);
+				
+			i++;
+		}
+	}
+	std::cout << END;
+}
+
+void	PmergeMe::sortVector( void )
+{
+	_pairVector();
+	_binaryInsertVector();
+
+	// std::cout << "Sorted : ";
+	// printContainer(_sortedDeque);
+	// std::cout << std::endl;
+
+	gettimeofday(&_endT, NULL);
+	long long timeSpan = (_endT.tv_sec - _startT.tv_sec) * 1000000LL + (_endT.tv_usec - _startT.tv_usec);
+	std::cout << "Time to sort using std::vector : " << timeSpan / 1000.0 << " us" << std::endl;
+}
+
 bool	PmergeMe::fillVector( const int argc, const char **argv )
 {
+	gettimeofday(&_startT, NULL);
+	
 	if (argc < 2)
 		return (false);
 	
